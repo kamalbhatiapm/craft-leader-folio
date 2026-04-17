@@ -104,13 +104,13 @@ export const About = () => {
               <li
                 key={c.name}
                 title={c.name}
-                className="flex h-16 w-32 items-center justify-center rounded-lg bg-white px-4 shadow-soft border border-border/40 transition-transform hover:-translate-y-0.5"
+                className="flex h-20 w-36 sm:w-40 items-center justify-center rounded-lg bg-white px-3 py-2 shadow-soft border border-border/40 transition-transform hover:-translate-y-0.5"
               >
                 <img
                   src={c.logo}
                   alt={`${c.name} logo`}
                   loading="lazy"
-                  className="max-h-10 w-auto object-contain"
+                  className="max-h-full max-w-full object-contain"
                 />
               </li>
             ))}
