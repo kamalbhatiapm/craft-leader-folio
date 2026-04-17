@@ -34,7 +34,7 @@ export const Quotes = () => {
         <SectionHeader
           eyebrow="Quotes"
           title="Words I keep close."
-          description="Lines that recalibrate me when I'm stuck, scared, or shipping."
+          description="Lines that ground me when I'm doubtful, stretched, or mid-build."
         />
         <h2 id="quotes-heading" className="sr-only">Quotes</h2>
 
