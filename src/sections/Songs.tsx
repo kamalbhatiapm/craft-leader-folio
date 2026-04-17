@@ -2,7 +2,7 @@ import { Music } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { songs } from "@/content/songs";
 
-const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
+const ext = { target: "_blank", rel: "noopener noreferrer external" } as const;
 
 export const Songs = () => (
   <section
