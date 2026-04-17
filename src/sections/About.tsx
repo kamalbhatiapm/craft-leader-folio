@@ -1,5 +1,6 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/content/profile";
+import { companies } from "@/content/companies";
 
 const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
 
@@ -91,6 +92,29 @@ export const About = () => {
               </span>
             </div>
           </div>
+        </div>
+
+        {/* Companies I've worked with */}
+        <div className="mt-16 sm:mt-20">
+          <p className="mb-6 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+            Companies I've worked with
+          </p>
+          <ul className="flex flex-wrap items-center gap-x-10 gap-y-6">
+            {companies.map((c) => (
+              <li key={c.name} className="flex items-center">
+                <img
+                  src={`https://logo.clearbit.com/${c.domain}`}
+                  alt={`${c.name} logo`}
+                  loading="lazy"
+                  className="h-8 sm:h-9 w-auto object-contain opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    target.outerHTML = `<span class="text-base font-medium text-muted-foreground">${c.name}</span>`;
+                  }}
+                />
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
