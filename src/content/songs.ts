@@ -10,10 +10,10 @@ export type Song = {
 export const songs: Song[] = [
   {
     id: "s1",
-    title: "[TODO: song 1]",
+    title: "Sigma Male",
     artist: "[TODO: artist]",
     why: "[TODO: one-line why this song]",
-    links: { youtube: "#" },
+    links: { youtube: "https://www.youtube.com/watch?v=ZxMaHi91RkE" },
   },
   {
     id: "s2",
