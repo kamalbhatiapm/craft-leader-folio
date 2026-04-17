@@ -69,7 +69,8 @@ export const Songs = () => {
             </article>
           </li>
         ))}
-      </ul>
-    </div>
-  </section>
-);
+        </ul>
+      </div>
+    </section>
+  );
+};
