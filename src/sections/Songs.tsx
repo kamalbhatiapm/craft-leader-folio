@@ -6,9 +6,14 @@ const openExternalLink = (href: string) => {
   if (typeof window === "undefined") return;
 
   const popup = window.open(href, "_blank", "noopener,noreferrer");
-  if (!popup) {
-    window.location.assign(href);
+  if (popup) return;
+
+  if (window.top && window.top !== window) {
+    window.top.location.href = href;
+    return;
   }
+
+  window.location.href = href;
 };
 
 export const Songs = () => (
@@ -38,9 +43,14 @@ export const Songs = () => (
             <li key={s.id}>
               <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card shadow-soft transition-transform hover:-translate-y-0.5">
                 {href ? (
-                  <button
-                    type="button"
-                    onClick={() => openExternalLink(href)}
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer external"
+                    onClick={(event) => {
+                      event.preventDefault();
+                      openExternalLink(href);
+                    }}
                     aria-label={`Watch ${s.title} by ${s.artist} on YouTube`}
                     className="relative block aspect-video overflow-hidden bg-black text-left"
                   >
@@ -63,7 +73,7 @@ export const Songs = () => (
                         </svg>
                       </span>
                     </span>
-                  </button>
+                  </a>
                 ) : (
                   <div className="aspect-video bg-gradient-card flex items-center justify-center">
                     <Music className="h-10 w-10 text-primary/70" aria-hidden />
@@ -75,13 +85,18 @@ export const Songs = () => (
 
                   {href && (
                     <div className="mt-4 flex flex-wrap gap-2 border-t border-border pt-4">
-                      <button
-                        type="button"
-                        onClick={() => openExternalLink(href)}
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer external"
+                        onClick={(event) => {
+                          event.preventDefault();
+                          openExternalLink(href);
+                        }}
                         className="rounded-md bg-secondary px-2.5 py-1 text-xs font-medium transition-colors hover:bg-primary hover:text-primary-foreground"
                       >
                         YouTube
-                      </button>
+                      </a>
                     </div>
                   )}
                 </div>
