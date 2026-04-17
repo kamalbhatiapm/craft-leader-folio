@@ -99,18 +99,19 @@ export const About = () => {
           <p className="mb-6 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
             Companies I've worked with
           </p>
-          <ul className="flex flex-wrap items-center gap-x-10 gap-y-6">
+          <ul className="flex flex-wrap items-center gap-4 sm:gap-5">
             {companies.map((c) => (
-              <li key={c.name} className="flex items-center gap-3">
+              <li
+                key={c.name}
+                title={c.name}
+                className="flex h-16 w-32 items-center justify-center rounded-lg bg-white px-4 shadow-soft border border-border/40 transition-transform hover:-translate-y-0.5"
+              >
                 <img
-                  src={`https://www.google.com/s2/favicons?domain=${c.domain}&sz=64`}
+                  src={c.logo}
                   alt={`${c.name} logo`}
                   loading="lazy"
-                  width={32}
-                  height={32}
-                  className="h-8 w-8 object-contain rounded-sm opacity-80 hover:opacity-100 transition-opacity"
+                  className="max-h-10 w-auto object-contain"
                 />
-                <span className="text-sm font-medium text-foreground">{c.name}</span>
               </li>
             ))}
           </ul>
