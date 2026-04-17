@@ -101,17 +101,16 @@ export const About = () => {
           </p>
           <ul className="flex flex-wrap items-center gap-x-10 gap-y-6">
             {companies.map((c) => (
-              <li key={c.name} className="flex items-center">
+              <li key={c.name} className="flex items-center gap-3">
                 <img
-                  src={`https://logo.clearbit.com/${c.domain}`}
+                  src={`https://www.google.com/s2/favicons?domain=${c.domain}&sz=64`}
                   alt={`${c.name} logo`}
                   loading="lazy"
-                  className="h-8 sm:h-9 w-auto object-contain opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.outerHTML = `<span class="text-base font-medium text-muted-foreground">${c.name}</span>`;
-                  }}
+                  width={32}
+                  height={32}
+                  className="h-8 w-8 object-contain rounded-sm opacity-80 hover:opacity-100 transition-opacity"
                 />
+                <span className="text-sm font-medium text-foreground">{c.name}</span>
               </li>
             ))}
           </ul>
