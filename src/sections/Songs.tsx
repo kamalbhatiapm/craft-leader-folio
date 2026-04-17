@@ -21,11 +21,21 @@ export const Songs = () => {
     ? `https://www.youtube-nocookie.com/embed/${firstId}?rel=0&modestbranding=1&autoplay=1&enablejsapi=1&playlist=${restIds.join(",")}`
     : "";
 
-  const sendCommand = (func: "nextVideo" | "previousVideo") => {
+  const sendCommand = (func: "nextVideo" | "previousVideo" | "playVideo" | "pauseVideo") => {
     iframeRef.current?.contentWindow?.postMessage(
       JSON.stringify({ event: "command", func, args: [] }),
       "*",
     );
+  };
+
+  const togglePlay = () => {
+    if (isPlaying) {
+      sendCommand("pauseVideo");
+      setIsPlaying(false);
+    } else {
+      sendCommand("playVideo");
+      setIsPlaying(true);
+    }
   };
 
   const handleNext = () => {
