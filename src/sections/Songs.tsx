@@ -59,28 +59,31 @@ export const Songs = () => {
       className="scroll-mt-20 outline-none"
     >
       <div className="container py-16 sm:py-24">
-        <SectionHeader
-          eyebrow="Hype Songs"
-          title="Soundtracks to shipping."
-          description="Songs that get me into deep work, ship mode, or pre-demo nerves."
-        />
+        <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <SectionHeader
+            eyebrow="Hype Songs"
+            title="Soundtracks to shipping."
+            description="Songs that get me into deep work, ship mode, or pre-demo nerves."
+          />
+          {hasPlaylist && !playAll && (
+            <Button
+              size="lg"
+              className="gap-2 self-start sm:self-auto"
+              onClick={() => {
+                setCurrentIndex(0);
+                setIsPlaying(true);
+                setPlayAll(true);
+              }}
+            >
+              <PlayCircle className="h-5 w-5" aria-hidden />
+              Play all
+            </Button>
+          )}
+        </div>
         <h2 id="songs-heading" className="sr-only">Hype Songs</h2>
 
-        {hasPlaylist && (
+        {hasPlaylist && playAll && (
           <div className="mb-8 flex flex-col items-center gap-4">
-            {!playAll ? (
-              <Button
-                size="lg"
-                className="gap-2"
-                onClick={() => {
-                  setCurrentIndex(0);
-                  setIsPlaying(true);
-                  setPlayAll(true);
-                }}
-              >
-                <PlayCircle className="h-5 w-5" aria-hidden />
-                Play all
-              </Button>
             ) : (
               <div className="w-full max-w-2xl overflow-hidden rounded-xl border border-border bg-card shadow-soft">
                 <div className="flex items-center justify-between gap-3 px-4 py-3">
