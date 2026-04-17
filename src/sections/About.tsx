@@ -1,10 +1,10 @@
-import { Download, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/content/profile";
 
 const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
 
 export const About = () => {
-  const { name, role, tagline, bio, cares, socials, resumeUrl } = profile;
+  const { name, role, tagline, bio, cares, socials } = profile;
 
   return (
     <section
@@ -45,15 +45,6 @@ export const About = () => {
             </ul>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a
-                href={resumeUrl}
-                {...ext}
-                className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-soft hover:opacity-90 transition-opacity"
-              >
-                <Download className="h-4 w-4" aria-hidden />
-                Download Resume
-              </a>
-
               <div className="flex items-center gap-1" aria-label="Contact">
                 {socials.email && (
                   <a

@@ -11,7 +11,6 @@ export type Profile = {
   bio: string[];
   cares: string[];
   socials: Social;
-  resumeUrl: string;
 };
 
 export const profile: Profile = {
@@ -36,5 +35,4 @@ export const profile: Profile = {
     linkedin: "[TODO: add LinkedIn URL]",
     github: "[TODO: add GitHub URL]",
   },
-  resumeUrl: "/resume.pdf",
 };
