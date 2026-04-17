@@ -161,6 +161,14 @@ export const Songs = () => {
                     <Button
                       variant="ghost"
                       size="icon"
+                      onClick={() => seekRelative(-10)}
+                      aria-label="Rewind 10 seconds"
+                    >
+                      <Rewind className="h-4 w-4" aria-hidden />
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
                       onClick={togglePlay}
                       aria-label={isPlaying ? "Pause" : "Play"}
                     >
@@ -169,6 +177,14 @@ export const Songs = () => {
                       ) : (
                         <Play className="h-4 w-4" aria-hidden />
                       )}
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => seekRelative(10)}
+                      aria-label="Fast-forward 10 seconds"
+                    >
+                      <FastForward className="h-4 w-4" aria-hidden />
                     </Button>
                     <Button
                       variant="ghost"
