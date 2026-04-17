@@ -35,15 +35,6 @@ export const Songs = () => (
                 <p className="mt-3 text-sm italic text-foreground/80">"{s.why}"</p>
 
                 <div className="mt-4 flex flex-wrap gap-2 pt-4 border-t border-border">
-                  {s.links.spotify && (
-                    <a
-                      href={s.links.spotify}
-                      {...ext}
-                      className="rounded-md bg-secondary px-2.5 py-1 text-xs font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
-                    >
-                      Spotify
-                    </a>
-                  )}
                   {s.links.youtube && (
                     <a
                       href={s.links.youtube}
@@ -51,15 +42,6 @@ export const Songs = () => (
                       className="rounded-md bg-secondary px-2.5 py-1 text-xs font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
                     >
                       YouTube
-                    </a>
-                  )}
-                  {s.links.apple && (
-                    <a
-                      href={s.links.apple}
-                      {...ext}
-                      className="rounded-md bg-secondary px-2.5 py-1 text-xs font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
-                    >
-                      Apple Music
                     </a>
                   )}
                 </div>

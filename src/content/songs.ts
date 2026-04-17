@@ -4,7 +4,7 @@ export type Song = {
   artist: string;
   why: string;
   cover?: string;
-  links: { spotify?: string; youtube?: string; apple?: string };
+  links: { youtube?: string };
 };
 
 export const songs: Song[] = [
@@ -13,14 +13,14 @@ export const songs: Song[] = [
     title: "[TODO: song 1]",
     artist: "[TODO: artist]",
     why: "[TODO: one-line why this song]",
-    links: { spotify: "#", youtube: "#", apple: "#" },
+    links: { youtube: "#" },
   },
   {
     id: "s2",
     title: "[TODO: song 2]",
     artist: "[TODO: artist]",
     why: "[TODO: one-line why this song]",
-    links: { spotify: "#" },
+    links: { youtube: "#" },
   },
   {
     id: "s3",
@@ -34,13 +34,13 @@ export const songs: Song[] = [
     title: "[TODO: song 4]",
     artist: "[TODO: artist]",
     why: "[TODO: one-line why this song]",
-    links: { spotify: "#", apple: "#" },
+    links: { youtube: "#" },
   },
   {
     id: "s5",
     title: "[TODO: song 5]",
     artist: "[TODO: artist]",
     why: "[TODO: one-line why this song]",
-    links: { spotify: "#" },
+    links: { youtube: "#" },
   },
 ];
