@@ -35,5 +35,4 @@ export const profile: Profile = {
     linkedin: "[TODO: add LinkedIn URL]",
     github: "[TODO: add GitHub URL]",
   },
-  resumeUrl: "/resume.pdf",
 };
