@@ -11,7 +11,6 @@ export type Profile = {
   bio: string[];
   cares: string[];
   socials: Social;
-  resumeUrl: string;
 };
 
 export const profile: Profile = {

@@ -1,10 +1,10 @@
-import { Download, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/content/profile";
 
 const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
 
 export const About = () => {
-  const { name, role, tagline, bio, cares, socials, resumeUrl } = profile;
+  const { name, role, tagline, bio, cares, socials } = profile;
 
   return (
     <section
