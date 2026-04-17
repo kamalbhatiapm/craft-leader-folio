@@ -38,8 +38,11 @@ export const Songs = () => {
               </Button>
             ) : (
               <div className="w-full max-w-2xl overflow-hidden rounded-xl border border-border bg-card shadow-soft">
-                <div className="flex items-center justify-between border-b border-border px-4 py-2">
-                  <span className="text-sm font-medium">Now playing — Hype playlist</span>
+                <div className="flex items-center justify-between gap-3 px-4 py-3">
+                  <div className="flex items-center gap-2 text-sm font-medium">
+                    <Music className="h-4 w-4 text-primary" aria-hidden />
+                    Now playing — Hype playlist
+                  </div>
                   <Button
                     variant="ghost"
                     size="sm"
@@ -51,14 +54,14 @@ export const Songs = () => {
                     Stop
                   </Button>
                 </div>
-                <div className="h-24 bg-black sm:h-28">
+                {/* Audio-only: video frame is hidden off-screen, audio still plays */}
+                <div aria-hidden className="h-0 w-0 overflow-hidden">
                   <iframe
                     src={embedSrc}
                     title="Hype songs playlist"
-                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allow="autoplay; encrypted-media"
                     referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                    className="h-full w-full border-0"
+                    className="h-[1px] w-[1px] border-0"
                   />
                 </div>
               </div>
