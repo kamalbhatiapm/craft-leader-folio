@@ -1,6 +1,7 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/content/profile";
 import { companies } from "@/content/companies";
+import profilePhoto from "@/assets/profile.jpeg";
 
 const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
 
@@ -80,16 +81,15 @@ export const About = () => {
             </div>
           </div>
 
-          {/* Photo slot — gradient mesh fallback */}
+          {/* Profile photo */}
           <div className="md:w-64 lg:w-72">
-            <div
-              role="img"
-              aria-label="Profile photo placeholder"
-              className="aspect-square w-full rounded-2xl bg-gradient-card shadow-soft border border-border/60 flex items-end p-4"
-            >
-              <span className="text-xs text-muted-foreground bg-background/70 backdrop-blur px-2 py-1 rounded">
-                [TODO: add profile photo]
-              </span>
+            <div className="aspect-square w-full overflow-hidden rounded-2xl bg-gradient-card shadow-soft border border-border/60">
+              <img
+                src={profilePhoto}
+                alt={`${name} portrait`}
+                loading="eager"
+                className="h-full w-full object-cover"
+              />
             </div>
           </div>
         </div>
