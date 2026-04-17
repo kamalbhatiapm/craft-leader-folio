@@ -74,6 +74,7 @@ export const Songs = () => {
                 className="gap-2"
                 onClick={() => {
                   setCurrentIndex(0);
+                  setIsPlaying(true);
                   setPlayAll(true);
                 }}
               >
