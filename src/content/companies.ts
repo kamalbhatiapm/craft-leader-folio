@@ -1,20 +1,20 @@
+import tmobile from "@/assets/logos/tmobile.png";
+import johnsonControls from "@/assets/logos/johnson-controls.png";
+import unitedTechnologies from "@/assets/logos/united-technologies.png";
+
 export type Company = {
   name: string;
-  /** Simple Icons slug — see https://simpleicons.org */
-  slug: string;
-  /** Official brand color in hex (without #) for the icon fill */
-  color: string;
+  /** Resolved image URL — local import or external CDN. */
+  logo: string;
 };
 
-// Logos served from the Simple Icons CDN as official brand SVGs.
-// Color param tints the icon to its official brand color.
+// Apple and John Deere come from Simple Icons (official open-source brand SVGs).
+// T-Mobile, Johnson Controls and UTC are not on Simple Icons, so we use locally
+// generated brand-accurate marks instead.
 export const companies: Company[] = [
-  { name: "T-Mobile",            slug: "t-mobile",        color: "E20074" },
-  { name: "Apple",                slug: "apple",           color: "000000" },
-  { name: "Johnson Controls",     slug: "johnsoncontrols", color: "0066B3" },
-  { name: "United Technologies",  slug: "rtx",             color: "D52B1E" },
-  { name: "John Deere",           slug: "johndeere",       color: "367C2B" },
+  { name: "T-Mobile",            logo: tmobile },
+  { name: "Apple",                logo: "https://cdn.simpleicons.org/apple/000000" },
+  { name: "Johnson Controls",     logo: johnsonControls },
+  { name: "United Technologies",  logo: unitedTechnologies },
+  { name: "John Deere",           logo: "https://cdn.simpleicons.org/johndeere/367C2B" },
 ];
-
-export const logoUrl = (c: Company) =>
-  `https://cdn.simpleicons.org/${c.slug}/${c.color}`;

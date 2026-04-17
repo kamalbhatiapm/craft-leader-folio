@@ -1,6 +1,6 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/content/profile";
-import { companies, logoUrl } from "@/content/companies";
+import { companies } from "@/content/companies";
 import profilePhoto from "@/assets/profile.jpeg";
 
 const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
@@ -107,10 +107,10 @@ export const About = () => {
                 className="flex h-20 w-36 sm:w-40 items-center justify-center rounded-lg bg-white px-3 py-2 shadow-soft border border-border/40 transition-transform hover:-translate-y-0.5"
               >
                 <img
-                  src={logoUrl(c)}
+                  src={c.logo}
                   alt={`${c.name} logo`}
                   loading="lazy"
-                  className="max-h-10 max-w-[80%] object-contain"
+                  className="max-h-12 max-w-[80%] object-contain"
                 />
               </li>
             ))}
