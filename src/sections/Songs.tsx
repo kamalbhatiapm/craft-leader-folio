@@ -2,7 +2,14 @@ import { Music } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { songs } from "@/content/songs";
 
-const ext = { target: "_blank", rel: "noopener noreferrer external" } as const;
+const openExternalLink = (href: string) => {
+  if (typeof window === "undefined") return;
+
+  const popup = window.open(href, "_blank", "noopener,noreferrer");
+  if (!popup) {
+    window.location.assign(href);
+  }
+};
 
 export const Songs = () => (
   <section
@@ -31,11 +38,11 @@ export const Songs = () => (
             <li key={s.id}>
               <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card shadow-soft transition-transform hover:-translate-y-0.5">
                 {href ? (
-                  <a
-                    href={href}
-                    {...ext}
+                  <button
+                    type="button"
+                    onClick={() => openExternalLink(href)}
                     aria-label={`Watch ${s.title} by ${s.artist} on YouTube`}
-                    className="relative block aspect-video overflow-hidden bg-black"
+                    className="relative block aspect-video overflow-hidden bg-black text-left"
                   >
                     {thumb ? (
                       <img
@@ -56,7 +63,7 @@ export const Songs = () => (
                         </svg>
                       </span>
                     </span>
-                  </a>
+                  </button>
                 ) : (
                   <div className="aspect-video bg-gradient-card flex items-center justify-center">
                     <Music className="h-10 w-10 text-primary/70" aria-hidden />
@@ -65,17 +72,16 @@ export const Songs = () => (
                 <div className="flex flex-1 flex-col p-5">
                   <h3 className="font-serif text-xl tracking-tight">{s.title}</h3>
                   <p className="text-sm text-muted-foreground">{s.artist}</p>
-                  
 
                   {href && (
-                    <div className="mt-4 flex flex-wrap gap-2 pt-4 border-t border-border">
-                      <a
-                        href={href}
-                        {...ext}
-                        className="rounded-md bg-secondary px-2.5 py-1 text-xs font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
+                    <div className="mt-4 flex flex-wrap gap-2 border-t border-border pt-4">
+                      <button
+                        type="button"
+                        onClick={() => openExternalLink(href)}
+                        className="rounded-md bg-secondary px-2.5 py-1 text-xs font-medium transition-colors hover:bg-primary hover:text-primary-foreground"
                       >
                         YouTube
-                      </a>
+                      </button>
                     </div>
                   )}
                 </div>
