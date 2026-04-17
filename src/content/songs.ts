@@ -19,10 +19,11 @@ export const songs: Song[] = [
   },
   {
     id: "s2",
-    title: "[TODO: song 2]",
-    artist: "[TODO: artist]",
+    title: "CAN'T STOP THE FEELING!",
+    artist: "Justin Timberlake",
     why: "[TODO: one-line why this song]",
-    links: { youtube: "#" },
+    youtubeId: "ru0K8uYEZWw",
+    links: { youtube: "https://www.youtube.com/watch?v=ru0K8uYEZWw" },
   },
   {
     id: "s3",
