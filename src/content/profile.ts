@@ -15,7 +15,7 @@ export type Profile = {
 
 export const profile: Profile = {
   name: "Kamal Bhatia",
-  role: "Sr. Product Manager, Technical at T-Mobile · Greater Chicago Area",
+  role: "Principal Product Manager, Technical at T-Mobile · Greater Chicago Area",
   tagline:
     "AI Infrastructure & Automation Platforms Product Leader — CI/CD, IaC, and execution governance at enterprise scale.",
   bio: [
