@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Music, PlayCircle, SkipBack, SkipForward, X } from "lucide-react";
+import { Music, Pause, Play, PlayCircle, SkipBack, SkipForward, X } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { songs } from "@/content/songs";
