@@ -84,8 +84,7 @@ export const Songs = () => {
 
         {hasPlaylist && playAll && (
           <div className="mb-8 flex flex-col items-center gap-4">
-            ) : (
-              <div className="w-full max-w-2xl overflow-hidden rounded-xl border border-border bg-card shadow-soft">
+            <div className="w-full max-w-2xl overflow-hidden rounded-xl border border-border bg-card shadow-soft">
                 <div className="flex items-center justify-between gap-3 px-4 py-3">
                   <div className="flex min-w-0 items-center gap-2 text-sm">
                     <Music className="h-4 w-4 shrink-0 text-primary" aria-hidden />
