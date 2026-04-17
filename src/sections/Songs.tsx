@@ -22,13 +22,27 @@ export const Songs = () => (
         {songs.map((s) => (
           <li key={s.id}>
             <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card shadow-soft transition-transform hover:-translate-y-0.5">
-              <div className="aspect-square bg-gradient-card flex items-center justify-center">
-                {s.cover ? (
-                  <img src={s.cover} alt="" loading="lazy" className="h-full w-full object-cover" />
-                ) : (
-                  <Music className="h-10 w-10 text-primary/70" aria-hidden />
-                )}
-              </div>
+              {s.youtubeId ? (
+                <div className="aspect-video bg-black">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${s.youtubeId}`}
+                    title={`${s.title} — ${s.artist}`}
+                    loading="lazy"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    className="h-full w-full border-0"
+                  />
+                </div>
+              ) : (
+                <div className="aspect-square bg-gradient-card flex items-center justify-center">
+                  {s.cover ? (
+                    <img src={s.cover} alt="" loading="lazy" className="h-full w-full object-cover" />
+                  ) : (
+                    <Music className="h-10 w-10 text-primary/70" aria-hidden />
+                  )}
+                </div>
+              )}
               <div className="flex flex-1 flex-col p-5">
                 <h3 className="font-serif text-xl tracking-tight">{s.title}</h3>
                 <p className="text-sm text-muted-foreground">{s.artist}</p>
