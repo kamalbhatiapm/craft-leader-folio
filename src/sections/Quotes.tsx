@@ -1,0 +1,89 @@
+import { useState } from "react";
+import { Check, Copy } from "lucide-react";
+import { SectionHeader } from "@/components/SectionHeader";
+import { quotes } from "@/content/quotes";
+import { useToast } from "@/hooks/use-toast";
+
+export const Quotes = () => {
+  const { toast } = useToast();
+  const [copiedId, setCopiedId] = useState<string | null>(null);
+
+  const handleCopy = async (id: string, text: string, attribution: string) => {
+    const payload = `"${text}" — ${attribution}`;
+    try {
+      await navigator.clipboard.writeText(payload);
+      setCopiedId(id);
+      toast({ title: "Quote copied", description: attribution });
+      setTimeout(() => setCopiedId((v) => (v === id ? null : v)), 1500);
+    } catch {
+      toast({
+        title: "Couldn't copy",
+        description: "Your browser blocked clipboard access.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  return (
+    <section
+      id="quotes"
+      aria-labelledby="quotes-heading"
+      className="scroll-mt-20 bg-secondary/30 outline-none"
+    >
+      <div className="container py-16 sm:py-24">
+        <SectionHeader
+          eyebrow="Quotes"
+          title="Words I keep close."
+          description="Lines that recalibrate me when I'm stuck, scared, or shipping."
+        />
+        <h2 id="quotes-heading" className="sr-only">Quotes</h2>
+
+        <ul className="grid gap-5 md:grid-cols-2">
+          {quotes.map((q) => {
+            const isCopied = copiedId === q.id;
+            return (
+              <li key={q.id}>
+                <figure className="relative flex h-full flex-col rounded-xl border border-border bg-card p-6 sm:p-8 shadow-soft">
+                  <span className="absolute -top-4 left-6 font-serif text-6xl leading-none text-primary/40 select-none" aria-hidden>
+                    “
+                  </span>
+                  <blockquote className="font-serif text-xl sm:text-2xl leading-snug text-foreground">
+                    {q.text}
+                  </blockquote>
+                  <figcaption className="mt-5 text-sm text-muted-foreground">
+                    — {q.attribution}
+                    <span className="ml-2 rounded-full bg-secondary px-2 py-0.5 text-xs">
+                      {q.theme}
+                    </span>
+                  </figcaption>
+                  {q.context && (
+                    <p className="mt-4 text-sm text-muted-foreground/90">{q.context}</p>
+                  )}
+
+                  <div className="mt-6 pt-4 border-t border-border">
+                    <button
+                      type="button"
+                      onClick={() => handleCopy(q.id, q.text, q.attribution)}
+                      className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-3 py-1.5 text-xs font-medium hover:bg-secondary transition-colors"
+                      aria-label={`Copy quote by ${q.attribution}`}
+                    >
+                      {isCopied ? (
+                        <>
+                          <Check className="h-3.5 w-3.5" aria-hidden /> Copied
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="h-3.5 w-3.5" aria-hidden /> Copy quote
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </figure>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </section>
+  );
+};
