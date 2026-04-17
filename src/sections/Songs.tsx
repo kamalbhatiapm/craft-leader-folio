@@ -148,7 +148,6 @@ export const Songs = () => {
                   />
                 </div>
               </div>
-            )}
           </div>
         )}
 
