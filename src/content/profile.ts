@@ -14,25 +14,26 @@ export type Profile = {
 };
 
 export const profile: Profile = {
-  name: "[TODO: add name]",
-  role: "[TODO: add current role]",
-  tagline: "[TODO: add one-line tagline]",
+  name: "Kamal Bhatia",
+  role: "Sr. Product Manager, Technical at T-Mobile · Greater Chicago Area",
+  tagline:
+    "AI Infrastructure & Automation Platforms Product Leader — CI/CD, IaC, and execution governance at enterprise scale.",
   bio: [
-    "[TODO: add bio paragraph 1]",
-    "[TODO: add bio paragraph 2]",
-    "[TODO: add bio paragraph 3 — optional]",
+    "I build the platforms that let other teams ship faster and safer. For 16+ years I've worked at the intersection of AI infrastructure, developer platforms, and automation — turning fragmented internal tooling into governed, reusable systems that scale across thousands of engineers.",
+    "Today I lead product for AI infrastructure and automation at T-Mobile, where my focus is CI/CD, infrastructure-as-code, and execution governance. I care about the unglamorous parts of platform work: paved roads, sane defaults, and clear ownership — the things that compound into real velocity.",
+    "[TODO: add a third paragraph in your own voice — what you're learning, what you're hiring for, or what kind of problems you want to work on next]",
   ],
   cares: [
-    "Product Design",
-    "PMF",
-    "GTM",
-    "Scalability",
-    "Security",
-    "Craft",
+    "AI Infrastructure",
+    "Developer Platforms",
+    "CI/CD",
+    "Infrastructure as Code",
+    "Execution Governance",
+    "Enterprise Scale",
   ],
   socials: {
     email: "[TODO: add email]",
-    linkedin: "[TODO: add LinkedIn URL]",
-    github: "[TODO: add GitHub URL]",
+    linkedin: "https://www.linkedin.com/in/kbhatiatech",
+    github: "[TODO: add GitHub URL or remove]",
   },
 };
