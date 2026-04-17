@@ -110,7 +110,7 @@ export const About = () => {
                   src={c.logo}
                   alt={`${c.name} logo`}
                   loading="lazy"
-                  className="max-h-full max-w-full object-contain"
+                  className="max-h-12 max-w-[80%] object-contain"
                 />
               </li>
             ))}
