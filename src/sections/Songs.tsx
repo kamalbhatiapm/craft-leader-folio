@@ -98,6 +98,12 @@ export const Songs = () => {
     setCurrentIndex((i) => (i - 1 + playlistIds.length) % playlistIds.length);
   };
 
+  const seekRelative = (delta: number) => {
+    const target = Math.max(0, currentTimeRef.current + delta);
+    sendCommand("seekTo", [target, true]);
+    currentTimeRef.current = target;
+  };
+
   const currentSong = playableSongs[currentIndex];
 
   return (
