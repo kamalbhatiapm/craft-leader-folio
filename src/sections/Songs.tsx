@@ -1,22 +1,43 @@
-import { Music } from "lucide-react";
+import { Music, PlayCircle } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
+import { Button } from "@/components/ui/button";
 import { songs } from "@/content/songs";
 
-export const Songs = () => (
-  <section
-    id="songs"
-    aria-labelledby="songs-heading"
-    className="scroll-mt-20 outline-none"
-  >
-    <div className="container py-16 sm:py-24">
-      <SectionHeader
-        eyebrow="Hype Songs"
-        title="The soundtrack to shipping."
-        description="Songs that get me into deep work, ship mode, or pre-demo nerves."
-      />
-      <h2 id="songs-heading" className="sr-only">Hype Songs</h2>
+export const Songs = () => {
+  const playlistIds = songs
+    .map((s) => s.youtubeId)
+    .filter((id): id is string => Boolean(id));
+  const playAllUrl =
+    playlistIds.length > 0
+      ? `https://www.youtube.com/watch_videos?video_ids=${playlistIds.join(",")}`
+      : undefined;
 
-      <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+  return (
+    <section
+      id="songs"
+      aria-labelledby="songs-heading"
+      className="scroll-mt-20 outline-none"
+    >
+      <div className="container py-16 sm:py-24">
+        <SectionHeader
+          eyebrow="Hype Songs"
+          title="The soundtrack to shipping."
+          description="Songs that get me into deep work, ship mode, or pre-demo nerves."
+        />
+        <h2 id="songs-heading" className="sr-only">Hype Songs</h2>
+
+        {playAllUrl && (
+          <div className="mb-8 flex justify-center">
+            <Button asChild size="lg" className="gap-2">
+              <a href={playAllUrl} target="_blank" rel="noopener noreferrer">
+                <PlayCircle className="h-5 w-5" aria-hidden />
+                Play all on YouTube
+              </a>
+            </Button>
+          </div>
+        )}
+
+        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {songs.map((s) => (
           <li key={s.id}>
             <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card shadow-soft">
@@ -48,7 +69,8 @@ export const Songs = () => (
             </article>
           </li>
         ))}
-      </ul>
-    </div>
-  </section>
-);
+        </ul>
+      </div>
+    </section>
+  );
+};
