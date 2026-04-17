@@ -105,6 +105,18 @@ export const Songs = () => {
                     <Button
                       variant="ghost"
                       size="icon"
+                      onClick={togglePlay}
+                      aria-label={isPlaying ? "Pause" : "Play"}
+                    >
+                      {isPlaying ? (
+                        <Pause className="h-4 w-4" aria-hidden />
+                      ) : (
+                        <Play className="h-4 w-4" aria-hidden />
+                      )}
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
                       onClick={handleNext}
                       aria-label="Next track"
                     >
