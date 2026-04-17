@@ -33,18 +33,4 @@ export const songs: Song[] = [
     youtubeId: "PJQM_VzDdR8",
     links: { youtube: "https://www.youtube.com/watch?v=PJQM_VzDdR8" },
   },
-  {
-    id: "s4",
-    title: "[TODO: song 4]",
-    artist: "[TODO: artist]",
-    why: "[TODO: one-line why this song]",
-    links: { youtube: "#" },
-  },
-  {
-    id: "s5",
-    title: "[TODO: song 5]",
-    artist: "[TODO: artist]",
-    why: "[TODO: one-line why this song]",
-    links: { youtube: "#" },
-  },
 ];
