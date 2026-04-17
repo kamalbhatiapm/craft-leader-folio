@@ -41,6 +41,20 @@ export const Songs = () => {
 
   const currentSong = playableSongs[currentIndex];
 
+  return (
+    <section
+      id="songs"
+      aria-labelledby="songs-heading"
+      className="scroll-mt-20 outline-none"
+    >
+      <div className="container py-16 sm:py-24">
+        <SectionHeader
+          eyebrow="Hype Songs"
+          title="The soundtrack to shipping."
+          description="Songs that get me into deep work, ship mode, or pre-demo nerves."
+        />
+        <h2 id="songs-heading" className="sr-only">Hype Songs</h2>
+
         {hasPlaylist && (
           <div className="mb-8 flex flex-col items-center gap-4">
             {!playAll ? (
