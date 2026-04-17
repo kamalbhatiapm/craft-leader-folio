@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Music, PlayCircle, SkipBack, SkipForward, X } from "lucide-react";
+import { Music, Pause, Play, PlayCircle, SkipBack, SkipForward, X } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { songs } from "@/content/songs";
@@ -7,6 +7,7 @@ import { songs } from "@/content/songs";
 export const Songs = () => {
   const [playAll, setPlayAll] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
   const playableSongs = songs.filter((s): s is typeof s & { youtubeId: string } =>
@@ -20,11 +21,21 @@ export const Songs = () => {
     ? `https://www.youtube-nocookie.com/embed/${firstId}?rel=0&modestbranding=1&autoplay=1&enablejsapi=1&playlist=${restIds.join(",")}`
     : "";
 
-  const sendCommand = (func: "nextVideo" | "previousVideo") => {
+  const sendCommand = (func: "nextVideo" | "previousVideo" | "playVideo" | "pauseVideo") => {
     iframeRef.current?.contentWindow?.postMessage(
       JSON.stringify({ event: "command", func, args: [] }),
       "*",
     );
+  };
+
+  const togglePlay = () => {
+    if (isPlaying) {
+      sendCommand("pauseVideo");
+      setIsPlaying(false);
+    } else {
+      sendCommand("playVideo");
+      setIsPlaying(true);
+    }
   };
 
   const handleNext = () => {
@@ -63,6 +74,7 @@ export const Songs = () => {
                 className="gap-2"
                 onClick={() => {
                   setCurrentIndex(0);
+                  setIsPlaying(true);
                   setPlayAll(true);
                 }}
               >
@@ -89,6 +101,18 @@ export const Songs = () => {
                       aria-label="Previous track"
                     >
                       <SkipBack className="h-4 w-4" aria-hidden />
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={togglePlay}
+                      aria-label={isPlaying ? "Pause" : "Play"}
+                    >
+                      {isPlaying ? (
+                        <Pause className="h-4 w-4" aria-hidden />
+                      ) : (
+                        <Play className="h-4 w-4" aria-hidden />
+                      )}
                     </Button>
                     <Button
                       variant="ghost"
