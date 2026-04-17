@@ -61,7 +61,7 @@ export const Songs = () => {
       <div className="container py-16 sm:py-24">
         <SectionHeader
           eyebrow="Hype Songs"
-          title="The soundtrack to shipping."
+          title="Soundtracks to shipping."
           description="Songs that get me into deep work, ship mode, or pre-demo nerves."
         />
         <h2 id="songs-heading" className="sr-only">Hype Songs</h2>
