@@ -1,5 +1,15 @@
-import { useRef, useState } from "react";
-import { Music, Pause, Play, PlayCircle, SkipBack, SkipForward, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import {
+  Music,
+  Pause,
+  Play,
+  PlayCircle,
+  Rewind,
+  FastForward,
+  SkipBack,
+  SkipForward,
+  X,
+} from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { songs } from "@/content/songs";
@@ -21,12 +31,50 @@ export const Songs = () => {
     ? `https://www.youtube-nocookie.com/embed/${firstId}?rel=0&modestbranding=1&autoplay=1&enablejsapi=1&loop=1&playlist=${[...restIds, firstId].join(",")}`
     : "";
 
-  const sendCommand = (func: "nextVideo" | "previousVideo" | "playVideo" | "pauseVideo") => {
+  const sendCommand = (
+    func: "nextVideo" | "previousVideo" | "playVideo" | "pauseVideo" | "seekTo",
+    args: (number | boolean)[] = [],
+  ) => {
     iframeRef.current?.contentWindow?.postMessage(
-      JSON.stringify({ event: "command", func, args: [] }),
+      JSON.stringify({ event: "command", func, args }),
       "*",
     );
   };
+
+  const sendListening = () => {
+    iframeRef.current?.contentWindow?.postMessage(
+      JSON.stringify({ event: "listening" }),
+      "*",
+    );
+  };
+
+  // Track playback time so we can seek relative to current position
+  const currentTimeRef = useRef(0);
+
+  useEffect(() => {
+    if (!playAll) return;
+
+    const onMessage = (e: MessageEvent) => {
+      if (typeof e.data !== "string") return;
+      try {
+        const data = JSON.parse(e.data);
+        const info = data?.info;
+        if (info && typeof info.currentTime === "number") {
+          currentTimeRef.current = info.currentTime;
+        }
+      } catch {
+        // ignore non-JSON messages
+      }
+    };
+
+    window.addEventListener("message", onMessage);
+    // Tell the player we want event updates
+    const t = setTimeout(sendListening, 500);
+    return () => {
+      window.removeEventListener("message", onMessage);
+      clearTimeout(t);
+    };
+  }, [playAll]);
 
   const togglePlay = () => {
     if (isPlaying) {
@@ -48,6 +96,12 @@ export const Songs = () => {
     if (!hasPlaylist) return;
     sendCommand("previousVideo");
     setCurrentIndex((i) => (i - 1 + playlistIds.length) % playlistIds.length);
+  };
+
+  const seekRelative = (delta: number) => {
+    const target = Math.max(0, currentTimeRef.current + delta);
+    sendCommand("seekTo", [target, true]);
+    currentTimeRef.current = target;
   };
 
   const currentSong = playableSongs[currentIndex];
@@ -107,6 +161,14 @@ export const Songs = () => {
                     <Button
                       variant="ghost"
                       size="icon"
+                      onClick={() => seekRelative(-10)}
+                      aria-label="Rewind 10 seconds"
+                    >
+                      <Rewind className="h-4 w-4" aria-hidden />
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
                       onClick={togglePlay}
                       aria-label={isPlaying ? "Pause" : "Play"}
                     >
@@ -115,6 +177,14 @@ export const Songs = () => {
                       ) : (
                         <Play className="h-4 w-4" aria-hidden />
                       )}
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => seekRelative(10)}
+                      aria-label="Fast-forward 10 seconds"
+                    >
+                      <FastForward className="h-4 w-4" aria-hidden />
                     </Button>
                     <Button
                       variant="ghost"
