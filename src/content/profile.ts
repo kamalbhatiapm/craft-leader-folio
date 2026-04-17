@@ -2,7 +2,6 @@ export type Social = {
   email?: string;
   linkedin?: string;
   github?: string;
-  x?: string;
 };
 
 export type Profile = {
@@ -36,7 +35,6 @@ export const profile: Profile = {
     email: "[TODO: add email]",
     linkedin: "[TODO: add LinkedIn URL]",
     github: "[TODO: add GitHub URL]",
-    x: "[TODO: add X/Twitter URL]",
   },
   resumeUrl: "/resume.pdf",
 };

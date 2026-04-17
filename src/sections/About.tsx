@@ -1,4 +1,4 @@
-import { Download, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Download, Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/content/profile";
 
 const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
@@ -82,16 +82,6 @@ export const About = () => {
                     className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border hover:bg-secondary transition-colors"
                   >
                     <Github className="h-4 w-4" aria-hidden />
-                  </a>
-                )}
-                {socials.x && (
-                  <a
-                    href={socials.x}
-                    {...ext}
-                    aria-label="X (Twitter)"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border hover:bg-secondary transition-colors"
-                  >
-                    <Twitter className="h-4 w-4" aria-hidden />
                   </a>
                 )}
               </div>
