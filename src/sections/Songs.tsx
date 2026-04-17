@@ -65,7 +65,7 @@ export const Songs = () => (
                 <div className="flex flex-1 flex-col p-5">
                   <h3 className="font-serif text-xl tracking-tight">{s.title}</h3>
                   <p className="text-sm text-muted-foreground">{s.artist}</p>
-                  <p className="mt-3 text-sm italic text-foreground/80">"{s.why}"</p>
+                  
 
                   {href && (
                     <div className="mt-4 flex flex-wrap gap-2 pt-4 border-t border-border">
