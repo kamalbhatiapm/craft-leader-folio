@@ -14,10 +14,10 @@ export type Article = {
 export const articles: Article[] = [
   {
     id: "a1",
-    title: "[TODO: LinkedIn article 1 title]",
+    title: "What makes an AI system truly agentic?",
     excerpt: "[TODO: 2-line excerpt]",
     source: "LinkedIn",
-    url: "#",
+    url: "https://www.linkedin.com/posts/kbhatiatech_what-makes-an-ai-system-truly-agentic-ugcPost-7429905010328776704-bFQm",
     publishedAt: "2025-01-15",
     readTimeMin: 6,
     tags: ["product"],
