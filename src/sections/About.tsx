@@ -135,22 +135,27 @@ export const About = () => {
           <p className="mb-6 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
             Companies I've worked with
           </p>
-          <ul className="flex flex-wrap items-center gap-4 sm:gap-5">
-            {companies.map((c) => (
-              <li
-                key={c.name}
-                title={c.name}
-                className="flex h-20 w-36 sm:w-40 items-center justify-center rounded-lg bg-white px-3 py-2 shadow-soft border border-border/40 transition-transform hover:-translate-y-0.5"
-              >
-                <img
-                  src={c.logo}
-                  alt={`${c.name} logo`}
-                  loading="lazy"
-                  className="max-h-12 max-w-[80%] object-contain"
-                />
-              </li>
-            ))}
-          </ul>
+          <TooltipProvider delayDuration={150}>
+            <ul className="flex flex-wrap items-center gap-4 sm:gap-5">
+              {companies.map((c) => (
+                <Tooltip key={c.name}>
+                  <TooltipTrigger asChild>
+                    <li
+                      className="flex h-20 w-36 sm:w-40 items-center justify-center rounded-lg bg-white px-3 py-2 shadow-soft border border-border/40 transition-transform hover:-translate-y-0.5 cursor-default"
+                    >
+                      <img
+                        src={c.logo}
+                        alt={`${c.name} logo`}
+                        loading="lazy"
+                        className="max-h-12 max-w-[80%] object-contain"
+                      />
+                    </li>
+                  </TooltipTrigger>
+                  <TooltipContent>{c.name}</TooltipContent>
+                </Tooltip>
+              ))}
+            </ul>
+          </TooltipProvider>
         </div>
       </div>
     </section>
