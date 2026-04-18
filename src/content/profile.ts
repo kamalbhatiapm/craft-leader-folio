@@ -9,6 +9,7 @@ export type Profile = {
   role: string;
   tagline: string;
   tags: string[];
+  tools: string[];
   bio: string[];
   cares: string[];
   socials: Social;
@@ -24,10 +25,12 @@ export const profile: Profile = {
     "RAG",
     "Evals",
     "LLM Ops",
+    "React",
+  ],
+  tools: [
     "Claude Code",
     "n8n",
     "Supabase",
-    "React",
     "V0",
     "Lovable",
   ],
