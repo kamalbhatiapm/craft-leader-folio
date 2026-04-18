@@ -72,13 +72,13 @@
 
     /* sidebar (kept for shadcn compatibility) */
     --sidebar-background: 220 40% 97%;
-    --sidebar-foreground: 230 15% 26%;
-    --sidebar-primary: 224 76% 56%;
+    --sidebar-foreground: 230 25% 14%;
+    --sidebar-primary: 224 76% 42%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 30% 94%;
-    --sidebar-accent-foreground: 230 25% 12%;
-    --sidebar-border: 220 25% 88%;
-    --sidebar-ring: 224 76% 56%;
+    --sidebar-accent: 220 30% 92%;
+    --sidebar-accent-foreground: 230 30% 10%;
+    --sidebar-border: 220 22% 78%;
+    --sidebar-ring: 224 76% 42%;
   }
 
   .dark {
