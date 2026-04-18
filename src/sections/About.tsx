@@ -6,7 +6,7 @@ import profilePhoto from "@/assets/profile.jpeg";
 const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
 
 export const About = () => {
-  const { name, role, tagline, bio, cares, socials } = profile;
+  const { name, role, tagline, tags, bio, cares, socials } = profile;
 
   return (
     <section
@@ -27,6 +27,18 @@ export const About = () => {
               {name}
             </h1>
             <p className="mt-3 text-lg text-muted-foreground">{role}</p>
+            {tags?.length ? (
+              <ul className="mt-4 flex flex-wrap gap-2" aria-label="Focus areas">
+                {tags.map((t) => (
+                  <li
+                    key={t}
+                    className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                  >
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            ) : null}
             <p className="mt-6 text-xl sm:text-2xl text-foreground leading-snug">{tagline}</p>
 
             <div className="mt-8 space-y-5 text-base text-muted-foreground leading-relaxed">
