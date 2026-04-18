@@ -8,7 +8,7 @@ export type Project = {
   tags: string[];
   cover?: string;
   previewUrl?: string;
-  links: { demo?: string; github?: string; caseStudy?: string; pitchDeck?: string };
+  links: { demo?: string; github?: string; caseStudy?: string; pitchDeck?: string; artifacts?: string };
   caseStudy?: {
     problem: string;
     insight: string;
@@ -27,6 +27,9 @@ export const projects: Project[] = [
     status: "live",
     tags: ["AI", "Platform", "Multi-Agent", "Intelligence"],
     previewUrl: "https://v0-cf-app-rho.vercel.app/",
-    links: { pitchDeck: "https://gamma.app/docs/Clear-Signals--ilk729qdwzgdxj8?mode=doc" },
+    links: {
+      pitchDeck: "https://gamma.app/docs/Clear-Signals--ilk729qdwzgdxj8?mode=doc",
+      artifacts: "/calmfalcon-product-doc.html",
+    },
   },
 ];
