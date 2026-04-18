@@ -35,10 +35,28 @@ export const Projects = () => (
           <li key={p.id}>
             <article className="group h-full flex flex-col rounded-xl border border-border bg-card text-card-foreground shadow-soft overflow-hidden transition-colors hover:border-primary/40">
               <div
-                className="aspect-[16/10] bg-gradient-card relative"
-                aria-hidden={!p.cover}
+                className="aspect-[16/10] bg-gradient-card relative overflow-hidden"
+                aria-hidden={!p.cover && !p.previewUrl}
               >
-                {p.cover ? (
+                {p.previewUrl ? (
+                  <div className="absolute inset-0 pointer-events-none">
+                    <iframe
+                      src={p.previewUrl}
+                      title={`${p.title} live preview`}
+                      loading="lazy"
+                      tabIndex={-1}
+                      aria-hidden
+                      sandbox="allow-scripts allow-same-origin"
+                      className="origin-top-left"
+                      style={{
+                        width: "200%",
+                        height: "200%",
+                        transform: "scale(0.5)",
+                        border: "0",
+                      }}
+                    />
+                  </div>
+                ) : p.cover ? (
                   <img
                     src={p.cover}
                     alt=""
@@ -46,9 +64,17 @@ export const Projects = () => (
                     className="h-full w-full object-cover"
                   />
                 ) : null}
+                {p.previewUrl && (
+                  <a
+                    href={p.previewUrl}
+                    {...ext}
+                    aria-label={`Open ${p.title} live demo in new tab`}
+                    className="absolute inset-0 z-10"
+                  />
+                )}
                 <span
                   className={cn(
-                    "absolute top-3 right-3 inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium",
+                    "absolute top-3 right-3 z-20 inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium backdrop-blur-sm",
                     statusStyles[p.status],
                   )}
                 >
