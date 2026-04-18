@@ -26,20 +26,4 @@ export const projects: Project[] = [
     tags: ["Product", "Design"],
     links: { demo: "#", github: "#" },
   },
-  {
-    id: "project-2",
-    title: "[TODO: project 2 title]",
-    pitch: "[TODO: one-line pitch]",
-    status: "building",
-    tags: ["AI", "Infra"],
-    links: { github: "#" },
-  },
-  {
-    id: "project-3",
-    title: "[TODO: project 3 title]",
-    pitch: "[TODO: one-line pitch]",
-    status: "concept",
-    tags: ["Research"],
-    links: {},
-  },
 ];
