@@ -9,6 +9,14 @@ export type Award = {
 
 export const awards: Award[] = [
   {
+    id: "pitch-day-2026",
+    title: "Pitch Day — Most Comprehensive Project",
+    issuer: "Agentic AI Product Management Certification",
+    year: 2026,
+    description:
+      "Recognized for building a complete, end-to-end AI product with exceptional depth, clarity, and execution during the Agentic AI PM course.",
+  },
+  {
     id: "award-1",
     title: "[TODO: Award title]",
     issuer: "[TODO: Issuer]",
