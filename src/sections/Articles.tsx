@@ -4,16 +4,21 @@ import { articles, type Article } from "@/content/articles";
 
 const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
 
+function parseISODate(iso: string): Date | null {
+  const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!m) return null;
+  // Construct as local date to avoid UTC->local off-by-one shifts.
+  return new Date(+m[1], +m[2] - 1, +m[3]);
+}
+
 function formatDate(iso: string) {
-  try {
-    return new Date(iso).toLocaleDateString(undefined, {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    });
-  } catch {
-    return iso;
-  }
+  const d = parseISODate(iso);
+  if (!d) return iso;
+  return d.toLocaleDateString(undefined, {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
 }
 
 function groupBySource(items: Article[]) {
@@ -25,7 +30,11 @@ function groupBySource(items: Article[]) {
   }
   // Sort each list by date desc
   for (const [, list] of map) {
-    list.sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt));
+    list.sort(
+      (a, b) =>
+        (parseISODate(b.publishedAt)?.getTime() ?? 0) -
+        (parseISODate(a.publishedAt)?.getTime() ?? 0),
+    );
   }
   return Array.from(map.entries());
 }
