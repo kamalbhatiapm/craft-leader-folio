@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { About } from "@/sections/About";
 import { Projects } from "@/sections/Projects";
 import { Articles } from "@/sections/Articles";
+import { Awards } from "@/sections/Awards";
 import { Songs } from "@/sections/Songs";
 import { Quotes } from "@/sections/Quotes";
 import { getInitialTheme } from "@/lib/useTheme";
@@ -25,6 +26,7 @@ const Index = () => {
         <About />
         <Projects />
         <Articles />
+        <Awards />
         <Songs />
         <Quotes />
       </main>
