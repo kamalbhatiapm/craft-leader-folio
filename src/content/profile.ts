@@ -27,6 +27,8 @@ export const profile: Profile = {
     "React",
     "DevSecOps",
     "Infrastructure as Code",
+    "Hybrid Cloud",
+    "Platform Strategy",
   ],
   tools: [
     "Claude Code",
