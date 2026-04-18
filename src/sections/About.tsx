@@ -152,7 +152,7 @@ export const About = () => {
                       />
                     </li>
                   </TooltipTrigger>
-                  <TooltipContent>{c.name}</TooltipContent>
+                  <TooltipContent side="bottom">{c.name}</TooltipContent>
                 </Tooltip>
               ))}
             </ul>
