@@ -132,7 +132,7 @@ export const About = () => {
                 className="group h-20 w-36 sm:w-40 [perspective:1000px] cursor-default"
                 aria-label={c.name}
               >
-                <div className="relative h-full w-full transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                <div className="relative h-full w-full transition-transform duration-[1600ms] ease-[cubic-bezier(0.16,1,0.3,1)] [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                   {/* Front: logo */}
                   <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-white px-3 py-2 shadow-soft border border-border/40 [backface-visibility:hidden]">
                     <img
