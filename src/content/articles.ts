@@ -32,4 +32,14 @@ export const articles: Article[] = [
     readTimeMin: 4,
     tags: ["leadership"],
   },
+  {
+    id: "a3",
+    title: "ML",
+    excerpt: "[TODO: 2-line excerpt]",
+    source: "LinkedIn",
+    url: "https://www.linkedin.com/posts/kbhatiatech_ml-ugcPost-7434054905633517568-XJjk",
+    publishedAt: "2024-12-01",
+    readTimeMin: 4,
+    tags: ["ml"],
+  },
 ];
