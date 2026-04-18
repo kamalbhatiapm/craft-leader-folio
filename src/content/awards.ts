@@ -1,3 +1,5 @@
+import pitchDay2026 from "@/assets/awards/pitch-day-2026.jpg";
+
 export type Award = {
   id: string;
   title: string;
@@ -5,6 +7,8 @@ export type Award = {
   year: number;
   description: string;
   url?: string;
+  /** Optional image (e.g. certificate). Imported asset URL. */
+  image?: string;
 };
 
 export const awards: Award[] = [
@@ -15,6 +19,7 @@ export const awards: Award[] = [
     year: 2026,
     description:
       "Recognized for building a complete, end-to-end AI product with exceptional depth, clarity, and execution during the Agentic AI PM course.",
+    image: pitchDay2026,
   },
   {
     id: "award-1",
