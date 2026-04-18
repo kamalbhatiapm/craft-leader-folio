@@ -1,7 +1,6 @@
 import { Linkedin, Mail } from "lucide-react";
 import { profile } from "@/content/profile";
 import { companies } from "@/content/companies";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import profilePhoto from "@/assets/profile.jpeg";
 
 const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
@@ -126,27 +125,31 @@ export const About = () => {
           <p className="mb-6 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
             Companies I've worked with
           </p>
-          <TooltipProvider delayDuration={150}>
-            <ul className="flex flex-wrap items-center gap-4 sm:gap-5">
-              {companies.map((c) => (
-                <Tooltip key={c.name}>
-                  <TooltipTrigger asChild>
-                    <li
-                      className="flex h-20 w-36 sm:w-40 items-center justify-center rounded-lg bg-white px-3 py-2 shadow-soft border border-border/40 transition-transform hover:-translate-y-0.5 cursor-default"
-                    >
-                      <img
-                        src={c.logo}
-                        alt={`${c.name} logo`}
-                        loading="lazy"
-                        className="max-h-12 max-w-[80%] object-contain"
-                      />
-                    </li>
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom">{c.name}</TooltipContent>
-                </Tooltip>
-              ))}
-            </ul>
-          </TooltipProvider>
+          <ul className="flex flex-wrap items-center gap-4 sm:gap-5">
+            {companies.map((c) => (
+              <li
+                key={c.name}
+                className="group h-20 w-36 sm:w-40 [perspective:1000px] cursor-default"
+                aria-label={c.name}
+              >
+                <div className="relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                  {/* Front: logo */}
+                  <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-white px-3 py-2 shadow-soft border border-border/40 [backface-visibility:hidden]">
+                    <img
+                      src={c.logo}
+                      alt={`${c.name} logo`}
+                      loading="lazy"
+                      className="max-h-12 max-w-[80%] object-contain"
+                    />
+                  </div>
+                  {/* Back: name */}
+                  <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-primary px-3 py-2 shadow-soft border border-primary/40 text-primary-foreground text-sm font-semibold text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                    {c.name}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
