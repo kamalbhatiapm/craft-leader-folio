@@ -74,7 +74,7 @@ export const About = () => {
                   {tools.map((t) => (
                     <li
                       key={t}
-                      className="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-medium text-accent-foreground"
+                      className="rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs font-medium text-accent dark:text-accent-foreground"
                     >
                       {t}
                     </li>
