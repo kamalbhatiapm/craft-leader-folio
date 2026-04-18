@@ -15,8 +15,8 @@ export const About = () => {
       className="bg-hero scroll-mt-20 outline-none"
     >
       <div className="container py-16 sm:py-24">
-        <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-start">
-          <div className="max-w-2xl animate-fade-in-up">
+        <div className="grid gap-10 md:gap-14 md:grid-cols-[minmax(0,1fr)_18rem] lg:grid-cols-[minmax(0,1fr)_20rem] md:items-start">
+          <div className="min-w-0 max-w-2xl animate-fade-in-up">
             <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-primary">
               About
             </p>
@@ -27,15 +27,15 @@ export const About = () => {
               {name}
             </h1>
             <p className="mt-3 text-lg text-muted-foreground">{role}</p>
-            <p className="mt-6 text-xl sm:text-2xl text-foreground">{tagline}</p>
+            <p className="mt-6 text-xl sm:text-2xl text-foreground leading-snug">{tagline}</p>
 
-            <div className="mt-8 space-y-4 text-base text-muted-foreground leading-relaxed">
+            <div className="mt-8 space-y-5 text-base text-muted-foreground leading-relaxed">
               {bio.filter(Boolean).map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
 
-            <ul className="mt-8 flex flex-wrap gap-2" aria-label="What I care about">
+            <ul className="mt-10 flex flex-wrap gap-2" aria-label="What I care about">
               {cares.map((c) => (
                 <li
                   key={c}
@@ -82,7 +82,7 @@ export const About = () => {
           </div>
 
           {/* Profile photo */}
-          <div className="md:w-64 lg:w-72">
+          <div className="md:sticky md:top-24 md:self-start">
             <div className="aspect-square w-full overflow-hidden rounded-2xl bg-gradient-card shadow-soft border border-border/60">
               <img
                 src={profilePhoto}
