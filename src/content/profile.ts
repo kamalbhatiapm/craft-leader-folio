@@ -8,6 +8,7 @@ export type Profile = {
   name: string;
   role: string;
   tagline: string;
+  tags: string[];
   bio: string[];
   cares: string[];
   socials: Social;
@@ -18,6 +19,13 @@ export const profile: Profile = {
   role: "AI Builder • Creative Thinker • Mom",
   tagline:
     "AI Infrastructure & Automation Platforms Product Leader — DevSecOps, IaC, and execution governance at enterprise scale.",
+  tags: [
+    "Agentic AI",
+    "RAG",
+    "Evals",
+    "LLM Ops",
+    "AI Infrastructure",
+  ],
   bio: [
     "I'm a product leader with 6+ years in product management and 16+ years across platform engineering, enterprise software, and UX. Across that journey, I've led and scaled products that delivered $350M+ in revenue uplift, supported 90K+ users, and drove 20%+ productivity gains across enterprise environments.",
     "Earlier in my career, I worked on global enterprise products including AppleCare for Enterprise, Apple CRM, employee security systems, and sales enablement tools. That experience shaped how I think about product: start with the user workflow, understand the operational constraints, and build systems that create measurable business value.",
