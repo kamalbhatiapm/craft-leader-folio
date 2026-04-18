@@ -26,6 +26,8 @@ export const profile: Profile = {
     "Evals",
     "LLM Ops",
     "React",
+    "DevSecOps",
+    "Infrastructure as Code",
   ],
   tools: [
     "Claude Code",
@@ -45,8 +47,6 @@ export const profile: Profile = {
   cares: [
     "AI Infrastructure",
     "Developer Platforms",
-    "DevSecOps",
-    "Infrastructure as Code",
     "Execution Governance",
     "Enterprise Scale",
   ],
