@@ -27,8 +27,6 @@ export const profile: Profile = {
     "React",
     "DevSecOps",
     "Infrastructure as Code",
-    "Hybrid Cloud",
-    "Platform Strategy",
   ],
   tools: [
     "Claude Code",
@@ -51,6 +49,8 @@ export const profile: Profile = {
     "Developer Platforms",
     "Execution Governance",
     "Enterprise Scale",
+    "Hybrid Cloud",
+    "Platform Strategy",
   ],
   socials: {
     email: "kamal.bhatia.pm@gmail.com",
