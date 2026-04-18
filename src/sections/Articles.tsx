@@ -85,9 +85,11 @@ export const Articles = () => {
                         <h4 className="mt-2 text-lg font-medium tracking-tight text-foreground group-hover:text-primary">
                           {a.title}
                         </h4>
-                        <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
-                          {a.excerpt}
-                        </p>
+                        {a.excerpt && (
+                          <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
+                            {a.excerpt}
+                          </p>
+                        )}
                       </div>
                       <ExternalLink
                         className="h-4 w-4 shrink-0 text-muted-foreground group-hover:text-primary"
