@@ -13,34 +13,34 @@
 
 @layer base {
   :root {
-    /* Light theme — soft indigo/teal tinted */
+    /* Light theme — WCAG AA compliant contrast */
     --background: 210 40% 99%;
-    --foreground: 230 25% 12%;
+    --foreground: 230 30% 8%; /* ~16.5:1 on background */
 
     --card: 0 0% 100%;
-    --card-foreground: 230 25% 12%;
+    --card-foreground: 230 30% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 230 25% 12%;
+    --popover-foreground: 230 30% 8%;
 
-    --primary: 224 76% 56%;
+    --primary: 224 76% 42%; /* darker for 4.5:1+ on white */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 40% 95%;
-    --secondary-foreground: 230 25% 12%;
+    --secondary: 220 35% 92%;
+    --secondary-foreground: 230 30% 10%;
 
-    --muted: 220 30% 94%;
-    --muted-foreground: 230 12% 42%;
+    --muted: 220 28% 92%;
+    --muted-foreground: 230 18% 32%; /* ~7:1 on background */
 
-    --accent: 174 72% 42%;
+    --accent: 174 80% 26%; /* darker teal for AA on white */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 75% 42%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 25% 88%;
-    --input: 220 25% 88%;
-    --ring: 224 76% 56%;
+    --border: 220 22% 78%;
+    --input: 220 22% 78%;
+    --ring: 224 76% 42%;
 
     --radius: 0.625rem;
 
