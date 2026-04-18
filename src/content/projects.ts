@@ -19,11 +19,12 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: "project-1",
-    title: "[TODO: project 1 title]",
-    pitch: "[TODO: one-line pitch]",
+    id: "calm-falcon",
+    title: "Calm Falcon — AI Signals Intelligence",
+    pitch:
+      "Decision-grade AI ecosystem intelligence for Platform PMs and Engineering Managers — multi-agent pipeline turns GitHub, arXiv, and vendor noise into verified weekly briefs.",
     status: "live",
-    tags: ["Product", "Design"],
-    links: { demo: "#", github: "#" },
+    tags: ["AI", "Platform", "Multi-Agent", "Intelligence"],
+    links: { demo: "https://v0-cf-app-rho.vercel.app/" },
   },
 ];
