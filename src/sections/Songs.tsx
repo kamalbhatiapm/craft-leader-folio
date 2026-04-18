@@ -25,10 +25,11 @@ export const Songs = () => {
   );
   const playlistIds = playableSongs.map((s) => s.youtubeId);
   const hasPlaylist = playlistIds.length > 0;
-  const [firstId, ...restIds] = playlistIds;
-  // enablejsapi=1 enables postMessage commands; loop=1 + playlist of remaining ids loops the set
+  const [firstId] = playlistIds;
+  // enablejsapi=1 enables postMessage commands. Include ALL ids (including firstId)
+  // in the `playlist` param so the first song plays first and the set loops correctly.
   const embedSrc = hasPlaylist
-    ? `https://www.youtube-nocookie.com/embed/${firstId}?rel=0&modestbranding=1&autoplay=1&enablejsapi=1&loop=1&playlist=${restIds.join(",")}`
+    ? `https://www.youtube-nocookie.com/embed/${firstId}?rel=0&modestbranding=1&autoplay=1&enablejsapi=1&loop=1&playlist=${playlistIds.join(",")}`
     : "";
 
   const sendCommand = (
@@ -79,9 +80,7 @@ export const Songs = () => {
             setCurrentIndex(idx);
           }
         } else if (typeof info.playlistIndex === "number" && info.playlistIndex >= 0) {
-          // playlistIndex refers to the `playlist` param (restIds), so offset by 1
-          // because firstId is the embedded video, not part of the playlist param.
-          const idx = (info.playlistIndex + 1) % playlistIds.length;
+          const idx = info.playlistIndex % playlistIds.length;
           setCurrentIndex(idx);
         }
       } catch {
