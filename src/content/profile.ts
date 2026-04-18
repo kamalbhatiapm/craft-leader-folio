@@ -28,6 +28,7 @@ export const profile: Profile = {
     "DevSecOps",
     "Infrastructure as Code",
     "AI Product Sense",
+    "Developer Empathy",
   ],
   tools: [
     "Claude Code",
