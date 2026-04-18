@@ -1,6 +1,7 @@
 import pitchDay2026 from "@/assets/awards/pitch-day-2026.jpg";
 import agenticAiPm2026 from "@/assets/awards/agentic-ai-pm-2026.jpg";
 import claudeCodeSkills2026 from "@/assets/awards/claude-code-skills-2026.jpg";
+import spmc2023 from "@/assets/awards/spmc-2023.jpg";
 
 export type Award = {
   id: string;
@@ -40,5 +41,14 @@ export const awards: Award[] = [
     description:
       "Completed the Acing AI PM Interviews & Mastering Claude Code Skills program — building AI agents and preparing for AI product sense and execution interviews.",
     image: claudeCodeSkills2026,
+  },
+  {
+    id: "spmc-2023",
+    title: "Sr Product Manager Certification (SPMC)™",
+    issuer: "Product School",
+    year: 2023,
+    description:
+      "Demonstrated knowledge, skills, and competence in product management and earned the Sr Product Manager Certification from Product School.",
+    image: spmc2023,
   },
 ];
