@@ -7,17 +7,24 @@ const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
 function parseISODate(iso: string): Date | null {
   const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})$/);
   if (!m) return null;
-  // Construct as local date to avoid UTC->local off-by-one shifts.
-  return new Date(+m[1], +m[2] - 1, +m[3]);
+
+  const result = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+  if (result.getUTCDate() !== +m[3] || result.getUTCMonth() !== +m[2] - 1) {
+    return null;
+  }
+
+  return result;
 }
 
 function formatDate(iso: string) {
   const d = parseISODate(iso);
   if (!d) return iso;
+
   return d.toLocaleDateString(undefined, {
     year: "numeric",
     month: "short",
     day: "numeric",
+    timeZone: "UTC",
   });
 }
 
