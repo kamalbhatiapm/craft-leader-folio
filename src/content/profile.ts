@@ -18,8 +18,7 @@ export type Profile = {
 export const profile: Profile = {
   name: "Kamal Bhatia",
   role: "AI Builder • Creative Thinker • Mom",
-  tagline:
-    "AI Infrastructure & Automation Platforms Product Leader — DevSecOps, IaC, and execution governance at enterprise scale.",
+  tagline: "Mom • Founder AI • Builder • Creative Thinker",
   tags: [
     "Agentic AI",
     "RAG",
