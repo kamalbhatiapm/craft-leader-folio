@@ -28,11 +28,18 @@ export const Songs = () => {
   const [firstId, ...restIds] = playlistIds;
   // enablejsapi=1 enables postMessage commands; loop=1 + playlist of remaining ids loops the set
   const embedSrc = hasPlaylist
-    ? `https://www.youtube-nocookie.com/embed/${firstId}?rel=0&modestbranding=1&autoplay=1&enablejsapi=1&loop=1&playlist=${[...restIds, firstId].join(",")}`
+    ? `https://www.youtube-nocookie.com/embed/${firstId}?rel=0&modestbranding=1&autoplay=1&enablejsapi=1&loop=1&playlist=${restIds.join(",")}`
     : "";
 
   const sendCommand = (
-    func: "nextVideo" | "previousVideo" | "playVideo" | "pauseVideo" | "seekTo",
+    func:
+      | "nextVideo"
+      | "previousVideo"
+      | "playVideo"
+      | "pauseVideo"
+      | "seekTo"
+      | "getPlaylistIndex"
+      | "getVideoUrl",
     args: (number | boolean)[] = [],
   ) => {
     iframeRef.current?.contentWindow?.postMessage(
@@ -59,8 +66,23 @@ export const Songs = () => {
       try {
         const data = JSON.parse(e.data);
         const info = data?.info;
-        if (info && typeof info.currentTime === "number") {
+        if (!info) return;
+        if (typeof info.currentTime === "number") {
           currentTimeRef.current = info.currentTime;
+        }
+        // Sync currentIndex when YouTube auto-advances. The player reports
+        // playlistIndex on track changes; videoData.video_id is the source of truth.
+        const videoId: string | undefined = info.videoData?.video_id;
+        if (videoId) {
+          const idx = playlistIds.indexOf(videoId);
+          if (idx >= 0) {
+            setCurrentIndex(idx);
+          }
+        } else if (typeof info.playlistIndex === "number" && info.playlistIndex >= 0) {
+          // playlistIndex refers to the `playlist` param (restIds), so offset by 1
+          // because firstId is the embedded video, not part of the playlist param.
+          const idx = (info.playlistIndex + 1) % playlistIds.length;
+          setCurrentIndex(idx);
         }
       } catch {
         // ignore non-JSON messages
@@ -74,7 +96,7 @@ export const Songs = () => {
       window.removeEventListener("message", onMessage);
       clearTimeout(t);
     };
-  }, [playAll]);
+  }, [playAll, playlistIds]);
 
   const togglePlay = () => {
     if (isPlaying) {
