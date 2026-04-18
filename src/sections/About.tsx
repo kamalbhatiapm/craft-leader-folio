@@ -27,18 +27,6 @@ export const About = () => {
               {name}
             </h1>
             <p className="mt-3 text-lg text-muted-foreground">{role}</p>
-            {tags?.length ? (
-              <ul className="mt-4 flex flex-wrap gap-2" aria-label="Focus areas">
-                {tags.map((t) => (
-                  <li
-                    key={t}
-                    className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
-                  >
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            ) : null}
             <p className="mt-6 text-xl sm:text-2xl text-foreground leading-snug">{tagline}</p>
 
             <div className="mt-8 space-y-5 text-base text-muted-foreground leading-relaxed">
@@ -57,6 +45,19 @@ export const About = () => {
                 </li>
               ))}
             </ul>
+
+            {tags?.length ? (
+              <ul className="mt-4 flex flex-wrap gap-2" aria-label="Skills & tools">
+                {tags.map((t) => (
+                  <li
+                    key={t}
+                    className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                  >
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            ) : null}
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <div className="flex items-center gap-1" aria-label="Contact">
