@@ -80,9 +80,7 @@ export const Songs = () => {
             setCurrentIndex(idx);
           }
         } else if (typeof info.playlistIndex === "number" && info.playlistIndex >= 0) {
-          // playlistIndex refers to the `playlist` param (restIds), so offset by 1
-          // because firstId is the embedded video, not part of the playlist param.
-          const idx = (info.playlistIndex + 1) % playlistIds.length;
+          const idx = info.playlistIndex % playlistIds.length;
           setCurrentIndex(idx);
         }
       } catch {
