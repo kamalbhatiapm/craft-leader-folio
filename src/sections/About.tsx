@@ -68,9 +68,9 @@ export const About = () => {
             {tools?.length ? (
               <div className="mt-4">
                 <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                  Tools
+                  Tools / Platforms
                 </p>
-                <ul className="flex flex-wrap gap-2" aria-label="Tools">
+                <ul className="flex flex-wrap gap-2" aria-label="Tools / Platforms">
                   {tools.map((t) => (
                     <li
                       key={t}
