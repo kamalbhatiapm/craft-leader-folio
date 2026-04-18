@@ -12,10 +12,10 @@ export const Awards = () => (
   >
     <div className="container py-16 sm:py-24">
       <SectionHeader
-        eyebrow="Awards"
-        title="Recognition & honors"
+        eyebrow="Awards & Certifications"
+        title="Recognition & credentials"
       />
-      <h2 id="awards-heading" className="sr-only">Awards</h2>
+      <h2 id="awards-heading" className="sr-only">Awards & Certifications</h2>
 
       <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {awards.map((a) => (

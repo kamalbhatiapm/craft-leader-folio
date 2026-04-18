@@ -7,7 +7,7 @@ const SECTIONS = [
   { id: "about", label: "About" },
   { id: "projects", label: "Projects" },
   { id: "articles", label: "Articles" },
-  { id: "awards", label: "Awards" },
+  { id: "awards", label: "Awards & Certifications" },
   { id: "songs", label: "Hype Songs" },
   { id: "quotes", label: "Quotes" },
 ];
