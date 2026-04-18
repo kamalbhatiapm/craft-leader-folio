@@ -24,10 +24,10 @@ export const articles: Article[] = [
   },
   {
     id: "a2",
-    title: "[TODO: LinkedIn article 2 title]",
+    title: "AI Strategy",
     excerpt: "[TODO: 2-line excerpt]",
     source: "LinkedIn",
-    url: "#",
+    url: "https://www.linkedin.com/posts/kbhatiatech_ai-strategy-ugcPost-7431114848152997888-Xne0",
     publishedAt: "2024-09-02",
     readTimeMin: 4,
     tags: ["leadership"],
