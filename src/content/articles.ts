@@ -42,4 +42,14 @@ export const articles: Article[] = [
     readTimeMin: 4,
     tags: ["ml"],
   },
+  {
+    id: "a4",
+    title: "Knowledge Access",
+    excerpt: "[TODO: 2-line excerpt]",
+    source: "LinkedIn",
+    url: "https://www.linkedin.com/posts/kbhatiatech_knowledge-access-ugcPost-7437632308557496321-YS1U",
+    publishedAt: "2024-12-15",
+    readTimeMin: 4,
+    tags: ["knowledge"],
+  },
 ];
