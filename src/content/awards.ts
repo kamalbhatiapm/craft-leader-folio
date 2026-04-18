@@ -1,4 +1,6 @@
 import pitchDay2026 from "@/assets/awards/pitch-day-2026.jpg";
+import agenticAiPm2026 from "@/assets/awards/agentic-ai-pm-2026.jpg";
+import claudeCodeSkills2026 from "@/assets/awards/claude-code-skills-2026.jpg";
 
 export type Award = {
   id: string;
@@ -22,25 +24,21 @@ export const awards: Award[] = [
     image: pitchDay2026,
   },
   {
-    id: "award-1",
-    title: "[TODO: Award title]",
-    issuer: "[TODO: Issuer]",
-    year: 2024,
-    description: "[TODO: 1-2 line description of what this award recognized]",
-    url: "#",
+    id: "agentic-ai-pm-2026",
+    title: "Agentic AI Product Management Certification",
+    issuer: "Maven — taught by Mahesh Yadav",
+    year: 2026,
+    description:
+      "Completed the Agentic AI Product Management Certification, covering the end-to-end product lifecycle for building and shipping agentic AI products.",
+    image: agenticAiPm2026,
   },
   {
-    id: "award-2",
-    title: "[TODO: Award title]",
-    issuer: "[TODO: Issuer]",
-    year: 2023,
-    description: "[TODO: 1-2 line description]",
-  },
-  {
-    id: "award-3",
-    title: "[TODO: Award title]",
-    issuer: "[TODO: Issuer]",
-    year: 2022,
-    description: "[TODO: 1-2 line description]",
+    id: "claude-code-skills-2026",
+    title: "Build your own AI Agents & Crack AI PM Interviews",
+    issuer: "Maven — taught by Mahesh Yadav",
+    year: 2026,
+    description:
+      "Completed the Acing AI PM Interviews & Mastering Claude Code Skills program — building AI agents and preparing for AI product sense and execution interviews.",
+    image: claudeCodeSkills2026,
   },
 ];
