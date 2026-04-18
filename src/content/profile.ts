@@ -24,7 +24,6 @@ export const profile: Profile = {
     "Agentic AI",
     "RAG",
     "Evals",
-    "LLM Ops",
     "React",
     "DevSecOps",
     "Infrastructure as Code",
