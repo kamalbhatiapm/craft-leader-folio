@@ -13,62 +13,72 @@
 
 @layer base {
   :root {
-    /* Light theme — clean zinc */
-    --background: 0 0% 100%;
-    --foreground: 240 10% 6%;
+    /* Light theme — soft indigo/teal tinted */
+    --background: 210 40% 99%;
+    --foreground: 230 25% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 6%;
+    --card-foreground: 230 25% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 6%;
+    --popover-foreground: 230 25% 12%;
 
-    --primary: 210 100% 60%;
+    --primary: 224 76% 56%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 5% 96%;
-    --secondary-foreground: 240 10% 6%;
+    --secondary: 220 40% 95%;
+    --secondary-foreground: 230 25% 12%;
 
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 46%;
+    --muted: 220 30% 94%;
+    --muted-foreground: 230 12% 42%;
 
-    --accent: 210 100% 60%;
+    --accent: 174 72% 42%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 210 100% 60%;
+    --border: 220 25% 88%;
+    --input: 220 25% 88%;
+    --ring: 224 76% 56%;
 
     --radius: 0.625rem;
 
     /* Editorial gradients (HSL only) */
     --gradient-hero: radial-gradient(
-        80% 60% at 50% 0%,
-        hsl(210 100% 60% / 0.18),
+        70% 55% at 15% 0%,
+        hsl(224 90% 70% / 0.22),
         transparent 60%
       ),
-      linear-gradient(180deg, hsl(0 0% 100%), hsl(240 5% 98%));
+      radial-gradient(
+        60% 50% at 90% 10%,
+        hsl(174 80% 55% / 0.18),
+        transparent 60%
+      ),
+      radial-gradient(
+        50% 40% at 50% 100%,
+        hsl(280 80% 70% / 0.12),
+        transparent 60%
+      ),
+      linear-gradient(180deg, hsl(210 40% 99%), hsl(220 35% 96%));
     --gradient-card: linear-gradient(
       135deg,
-      hsl(210 100% 60% / 0.18),
-      hsl(200 100% 50% / 0.18)
+      hsl(224 76% 56% / 0.18),
+      hsl(174 72% 42% / 0.18)
     );
 
-    --shadow-soft: 0 1px 2px hsl(240 10% 6% / 0.04),
-      0 8px 24px hsl(240 10% 6% / 0.06);
+    --shadow-soft: 0 1px 2px hsl(224 40% 20% / 0.05),
+      0 8px 24px hsl(224 40% 20% / 0.08);
 
     /* sidebar (kept for shadcn compatibility) */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5% 26%;
-    --sidebar-primary: 210 100% 60%;
+    --sidebar-background: 220 40% 97%;
+    --sidebar-foreground: 230 15% 26%;
+    --sidebar-primary: 224 76% 56%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 5% 96%;
-    --sidebar-accent-foreground: 240 10% 6%;
-    --sidebar-border: 240 6% 90%;
-    --sidebar-ring: 210 100% 60%;
+    --sidebar-accent: 220 30% 94%;
+    --sidebar-accent-foreground: 230 25% 12%;
+    --sidebar-border: 220 25% 88%;
+    --sidebar-ring: 224 76% 56%;
   }
 
   .dark {
