@@ -1,6 +1,7 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/content/profile";
 import { companies } from "@/content/companies";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import profilePhoto from "@/assets/profile.jpeg";
 
 const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
