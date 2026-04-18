@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 import { profile } from "@/content/profile";
 import { companies } from "@/content/companies";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -102,16 +102,6 @@ export const About = () => {
                     className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border hover:bg-secondary transition-colors"
                   >
                     <Linkedin className="h-4 w-4" aria-hidden />
-                  </a>
-                )}
-                {socials.github && (
-                  <a
-                    href={socials.github}
-                    {...ext}
-                    aria-label="GitHub"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border hover:bg-secondary transition-colors"
-                  >
-                    <Github className="h-4 w-4" aria-hidden />
                   </a>
                 )}
               </div>
