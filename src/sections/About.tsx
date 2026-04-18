@@ -6,7 +6,7 @@ import profilePhoto from "@/assets/profile.jpeg";
 const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
 
 export const About = () => {
-  const { name, role, tagline, tags, bio, cares, socials } = profile;
+  const { name, role, tagline, tags, tools, bio, cares, socials } = profile;
 
   return (
     <section
@@ -47,16 +47,39 @@ export const About = () => {
             </ul>
 
             {tags?.length ? (
-              <ul className="mt-4 flex flex-wrap gap-2" aria-label="Skills & tools">
-                {tags.map((t) => (
-                  <li
-                    key={t}
-                    className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
-                  >
-                    {t}
-                  </li>
-                ))}
-              </ul>
+              <div className="mt-6">
+                <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                  Skills
+                </p>
+                <ul className="flex flex-wrap gap-2" aria-label="Skills">
+                  {tags.map((t) => (
+                    <li
+                      key={t}
+                      className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                    >
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            {tools?.length ? (
+              <div className="mt-4">
+                <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                  Tools
+                </p>
+                <ul className="flex flex-wrap gap-2" aria-label="Tools">
+                  {tools.map((t) => (
+                    <li
+                      key={t}
+                      className="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-medium text-accent-foreground"
+                    >
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ) : null}
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
