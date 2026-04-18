@@ -34,7 +34,7 @@ export const articles: Article[] = [
   },
   {
     id: "a3",
-    title: "ML",
+    title: "ML Fundamentals",
     excerpt: "[TODO: 2-line excerpt]",
     source: "LinkedIn",
     url: "https://www.linkedin.com/posts/kbhatiatech_ml-ugcPost-7434054905633517568-XJjk",
