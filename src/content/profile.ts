@@ -51,7 +51,7 @@ export const profile: Profile = {
     "Enterprise Scale",
   ],
   socials: {
-    email: "[TODO: add email]",
+    email: "kamal.bhatia.pm@gmail.com",
     linkedin: "https://www.linkedin.com/in/kbhatiatech",
     github: "[TODO: add GitHub URL or remove]",
   },
