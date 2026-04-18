@@ -34,6 +34,7 @@ export const profile: Profile = {
     "Supabase",
     "V0",
     "Lovable",
+    "Google AI Studio",
   ],
   bio: [
     "I'm a product leader with 6+ years in product management and 16+ years across platform engineering, enterprise software, and UX. Across that journey, I've led and scaled products that delivered $350M+ in revenue uplift, supported 90K+ users, and drove 20%+ productivity gains across enterprise environments.",
