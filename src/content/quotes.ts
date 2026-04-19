@@ -17,10 +17,9 @@ export const quotes: Quote[] = [
   },
   {
     id: "q2",
-    text: "[TODO: quote 2 text]",
-    attribution: "[TODO: attribution]",
-    context: "[TODO: optional context]",
-    theme: "Resilience",
+    text: "It's perfectly fine to start with a learning goal and work your way toward a S.M.A.R.T. performance goal.",
+    attribution: "Teresa Torres",
+    context: "Continuous Discovery Habits: Discover Products that Create Customer Value and Business Value",
   },
   {
     id: "q3",
