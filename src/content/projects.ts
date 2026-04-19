@@ -8,7 +8,7 @@ export type Project = {
   tags: string[];
   cover?: string;
   previewUrl?: string;
-  links: { demo?: string; github?: string; caseStudy?: string; pitchDeck?: string; artifacts?: string };
+  links: { demo?: string; github?: string; caseStudy?: string; pitchDeck?: string; artifacts?: string; community?: string };
   caseStudy?: {
     problem: string;
     insight: string;
@@ -30,6 +30,7 @@ export const projects: Project[] = [
     links: {
       pitchDeck: "https://gamma.app/docs/Clear-Signals--ilk729qdwzgdxj8?mode=doc",
       artifacts: "/calmfalcon-product-doc.html",
+      community: "https://myaicommunity.org/project/6f64eb5c-0556-4a8a-9580-006ca0467362",
     },
   },
 ];
