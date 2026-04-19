@@ -1,28 +1,7 @@
-import { useState } from "react";
-import { Check, Copy } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { quotes } from "@/content/quotes";
-import { useToast } from "@/hooks/use-toast";
 
 export const Quotes = () => {
-  const { toast } = useToast();
-  const [copiedId, setCopiedId] = useState<string | null>(null);
-
-  const handleCopy = async (id: string, text: string, attribution: string) => {
-    const payload = `"${text}" — ${attribution}`;
-    try {
-      await navigator.clipboard.writeText(payload);
-      setCopiedId(id);
-      toast({ title: "Quote copied", description: attribution });
-      setTimeout(() => setCopiedId((v) => (v === id ? null : v)), 1500);
-    } catch {
-      toast({
-        title: "Couldn't copy",
-        description: "Your browser blocked clipboard access.",
-        variant: "destructive",
-      });
-    }
-  };
 
   return (
     <section
