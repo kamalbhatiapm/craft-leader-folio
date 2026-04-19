@@ -7,6 +7,7 @@ import { Articles } from "@/sections/Articles";
 import { Awards } from "@/sections/Awards";
 import { Songs } from "@/sections/Songs";
 import { Quotes } from "@/sections/Quotes";
+import { Lens } from "@/sections/Lens";
 import { getInitialTheme } from "@/lib/useTheme";
 
 const Index = () => {
@@ -29,6 +30,7 @@ const Index = () => {
         <Awards />
         <Songs />
         <Quotes />
+        <Lens />
       </main>
       <SiteFooter />
     </>
