@@ -19,7 +19,7 @@ export const Lens = () => {
       <div className="container py-16 sm:py-24">
         <SectionHeader
           eyebrow="Through My Lens"
-          title="Behind the scenes."
+          title="Beyond the Product"
           description="Snapshots of life off the roadmap — the moments, people, and places that keep me grounded."
         />
 
