@@ -151,7 +151,7 @@ export const Projects = () => (
                       {...ext}
                       className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
                     >
-                      <Users className="h-3.5 w-3.5" aria-hidden /> Community
+                      <Users className="h-3.5 w-3.5" aria-hidden /> AI Community
                     </a>
                   )}
                 </div>
