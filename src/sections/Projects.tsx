@@ -1,4 +1,4 @@
-import { ExternalLink, Github, FileText, Presentation, FolderOpen } from "lucide-react";
+import { ExternalLink, Github, FileText, Presentation, FolderOpen, Users } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { projects, type ProjectStatus } from "@/content/projects";
 import { cn } from "@/lib/utils";
@@ -143,6 +143,15 @@ export const Projects = () => (
                       className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
                     >
                       <FolderOpen className="h-3.5 w-3.5" aria-hidden /> Artifacts
+                    </a>
+                  )}
+                  {p.links.community && (
+                    <a
+                      href={p.links.community}
+                      {...ext}
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+                    >
+                      <Users className="h-3.5 w-3.5" aria-hidden /> Community
                     </a>
                   )}
                 </div>
