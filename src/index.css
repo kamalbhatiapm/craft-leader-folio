@@ -156,6 +156,12 @@
     font-family: "Fraunces", ui-serif, Georgia, serif;
   }
 
+  .font-display {
+    font-family: "Instrument Serif", "Fraunces", ui-serif, Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
   /* Visible, generous focus ring */
   :focus-visible {
     outline: 2px solid hsl(var(--ring));

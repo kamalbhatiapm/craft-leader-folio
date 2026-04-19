@@ -22,7 +22,7 @@ export const About = () => {
             </p>
             <h1
               id="about-heading"
-              className="font-serif text-4xl sm:text-5xl md:text-6xl tracking-tight text-foreground"
+              className="font-display text-5xl sm:text-6xl md:text-7xl tracking-tight text-foreground"
             >
               {name}
             </h1>
