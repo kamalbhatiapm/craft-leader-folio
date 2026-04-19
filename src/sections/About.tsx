@@ -120,10 +120,10 @@ export const About = () => {
           </div>
         </div>
 
-        {/* Companies I've worked with */}
+        {/* Companies I've worked at */}
         <div className="mt-16 sm:mt-20">
           <p className="mb-6 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-            Companies I've worked with
+            Companies I've worked at
           </p>
           <ul className="flex flex-wrap items-center gap-4 sm:gap-5">
             {companies.map((c) => (
