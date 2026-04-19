@@ -29,9 +29,8 @@ export const quotes: Quote[] = [
   },
   {
     id: "q4",
-    text: "[TODO: quote 4 text]",
-    attribution: "[TODO: attribution]",
-    theme: "Craft",
+    text: "Any product that needs a manual to work is broken.",
+    attribution: "Elon Musk",
   },
   {
     id: "q5",
