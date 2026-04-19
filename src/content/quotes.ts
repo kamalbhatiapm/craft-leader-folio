@@ -5,7 +5,7 @@ export type Quote = {
   text: string;
   attribution: string;
   context?: string;
-  theme: QuoteTheme;
+  theme?: QuoteTheme;
 };
 
 export const quotes: Quote[] = [
@@ -14,7 +14,6 @@ export const quotes: Quote[] = [
     text: "If we realize the divinity that enlivens all life forms on our planet, we will spread peace and love wherever we go.",
     attribution: "Rajinder Singh",
     context: "Inner and Outer Peace through Meditation",
-    theme: "Leadership",
   },
   {
     id: "q2",

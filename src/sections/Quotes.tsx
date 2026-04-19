@@ -52,9 +52,11 @@ export const Quotes = () => {
                   </blockquote>
                   <figcaption className="mt-5 text-sm text-muted-foreground">
                     — {q.attribution}
-                    <span className="ml-2 rounded-full bg-secondary px-2 py-0.5 text-xs">
-                      {q.theme}
-                    </span>
+                    {q.theme && (
+                      <span className="ml-2 rounded-full bg-secondary px-2 py-0.5 text-xs">
+                        {q.theme}
+                      </span>
+                    )}
                   </figcaption>
                   {q.context && (
                     <p className="mt-4 text-sm text-muted-foreground/90">{q.context}</p>
