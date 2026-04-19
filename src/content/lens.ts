@@ -1,3 +1,5 @@
+import heronImg from "@/assets/lens-heron.jpeg";
+
 export type LensShot = {
   id: string;
   caption: string;
@@ -10,6 +12,14 @@ export type LensShot = {
 };
 
 export const lens: LensShot[] = [
+  {
+    id: "heron",
+    caption: "A great blue heron, mid-step. Stillness and intent in the same frame.",
+    location: "Riverside walk",
+    aspect: "portrait",
+    src: heronImg,
+    alt: "A great blue heron walking across a grassy riverbank",
+  },
   {
     id: "morning-coffee",
     caption: "Morning coffee, before the standups begin.",
