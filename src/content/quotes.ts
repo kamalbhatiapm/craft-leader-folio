@@ -23,9 +23,9 @@ export const quotes: Quote[] = [
   },
   {
     id: "q3",
-    text: "[TODO: quote 3 text]",
-    attribution: "[TODO: attribution]",
-    theme: "Product",
+    text: "When we manage by outcomes, we give our teams the autonomy, responsibility, and ownership to chart their own path.",
+    attribution: "Teresa Torres",
+    context: "Continuous Discovery Habits: Discover Products that Create Customer Value and Business Value",
   },
   {
     id: "q4",
