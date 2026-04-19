@@ -13,78 +13,72 @@
 
 @layer base {
   :root {
-    /* Light theme — modern & playful: neon green + Tory Burch orange */
-    --background: 45 50% 98%; /* warm ivory */
-    --foreground: 150 30% 10%; /* deep forest-ink */
+    /* Light theme — WCAG AA compliant contrast */
+    --background: 210 40% 99%;
+    --foreground: 230 30% 8%; /* ~16.5:1 on background */
 
     --card: 0 0% 100%;
-    --card-foreground: 150 30% 10%;
+    --card-foreground: 230 30% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 150 30% 10%;
+    --popover-foreground: 230 30% 8%;
 
-    --primary: 20 95% 48%; /* rich Tory Burch orange */
+    --primary: 224 76% 42%; /* darker for 4.5:1+ on white */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 80 70% 90%; /* soft lime tint */
-    --secondary-foreground: 150 30% 12%;
+    --secondary: 220 35% 92%;
+    --secondary-foreground: 230 30% 10%;
 
-    --muted: 45 35% 93%;
-    --muted-foreground: 150 15% 32%;
+    --muted: 220 28% 92%;
+    --muted-foreground: 230 18% 32%; /* ~7:1 on background */
 
-    --accent: 145 70% 32%; /* deep neon-leaning green (AA on white) */
+    --accent: 174 80% 26%; /* darker teal for AA on white */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 75% 45%;
+    --destructive: 0 75% 42%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 45 25% 84%;
-    --input: 45 25% 84%;
-    --ring: 20 95% 48%;
+    --border: 220 22% 78%;
+    --input: 220 22% 78%;
+    --ring: 224 76% 42%;
 
     --radius: 0.625rem;
 
-    /* Editorial gradients — citrus + neon green (HSL only) */
+    /* Editorial gradients (HSL only) */
     --gradient-hero: radial-gradient(
-        70% 55% at 8% 0%,
-        hsl(95 90% 60% / 0.32),
+        70% 55% at 15% 0%,
+        hsl(224 90% 70% / 0.22),
         transparent 60%
       ),
       radial-gradient(
-        60% 50% at 95% 5%,
-        hsl(20 95% 60% / 0.34),
+        60% 50% at 90% 10%,
+        hsl(174 80% 55% / 0.18),
         transparent 60%
       ),
       radial-gradient(
-        55% 45% at 85% 95%,
-        hsl(48 100% 60% / 0.28),
+        50% 40% at 50% 100%,
+        hsl(280 80% 70% / 0.12),
         transparent 60%
       ),
-      radial-gradient(
-        50% 40% at 15% 100%,
-        hsl(145 80% 50% / 0.22),
-        transparent 60%
-      ),
-      linear-gradient(180deg, hsl(45 50% 98%), hsl(48 60% 95%));
+      linear-gradient(180deg, hsl(210 40% 99%), hsl(220 35% 96%));
     --gradient-card: linear-gradient(
       135deg,
-      hsl(20 95% 55% / 0.22),
-      hsl(48 100% 60% / 0.22),
-      hsl(95 80% 50% / 0.22)
+      hsl(224 76% 56% / 0.18),
+      hsl(174 72% 42% / 0.18)
     );
 
-    --shadow-soft: 0 1px 2px hsl(20 50% 25% / 0.06),
-      0 8px 28px hsl(20 60% 35% / 0.12);
+    --shadow-soft: 0 1px 2px hsl(224 40% 20% / 0.05),
+      0 8px 24px hsl(224 40% 20% / 0.08);
 
     /* sidebar (kept for shadcn compatibility) */
-    --sidebar-background: 45 50% 97%;
-    --sidebar-foreground: 150 25% 14%;
-    --sidebar-primary: 20 95% 48%;
+    --sidebar-background: 220 40% 97%;
+    --sidebar-foreground: 230 25% 14%;
+    --sidebar-primary: 224 76% 42%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 80 70% 90%;
-    --sidebar-accent-foreground: 150 30% 12%;
-    --sidebar-border: 45 25% 84%;
-    --sidebar-ring: 20 95% 48%;
+    --sidebar-accent: 220 30% 92%;
+    --sidebar-accent-foreground: 230 30% 10%;
+    --sidebar-border: 220 22% 78%;
+    --sidebar-ring: 224 76% 42%;
   }
 
   .dark {
