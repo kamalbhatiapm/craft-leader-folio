@@ -37,4 +37,10 @@ export const quotes: Quote[] = [
     text: "Design is not just what it looks like and feels like. Design is how it works.",
     attribution: "Steve Jobs",
   },
+  {
+    id: "q6",
+    text: "Your mindset is everything. Whether you think you can or think you can't, you're right.",
+    attribution: "Henry Ford",
+    theme: "Resilience",
+  },
 ];
