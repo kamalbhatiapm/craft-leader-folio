@@ -11,8 +11,9 @@ export type Quote = {
 export const quotes: Quote[] = [
   {
     id: "q1",
-    text: "[TODO: quote 1 text]",
-    attribution: "[TODO: attribution]",
+    text: "If we realize the divinity that enlivens all life forms on our planet, we will spread peace and love wherever we go.",
+    attribution: "Rajinder Singh",
+    context: "Inner and Outer Peace through Meditation",
     theme: "Leadership",
   },
   {
