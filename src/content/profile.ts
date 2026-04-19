@@ -22,7 +22,9 @@ export const profile: Profile = {
     "AI Infrastructure & Automation Platforms Product Leader — DevSecOps, IaC, and execution governance at enterprise scale.",
   tags: [
     "Agentic AI",
+    "Agentic RAG",
     "RAG",
+    "Knowledge Graphs",
     "Evals",
     "React",
     "DevSecOps",
