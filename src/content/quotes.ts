@@ -34,8 +34,7 @@ export const quotes: Quote[] = [
   },
   {
     id: "q5",
-    text: "[TODO: quote 5 text]",
-    attribution: "[TODO: attribution]",
-    theme: "Leadership",
+    text: "Design is not just what it looks like and feels like. Design is how it works.",
+    attribution: "Steve Jobs",
   },
 ];
