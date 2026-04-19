@@ -129,23 +129,19 @@ export const About = () => {
             {companies.map((c) => (
               <li
                 key={c.name}
-                className="group h-20 w-36 sm:w-40 [perspective:1000px] cursor-default"
+                className="group relative h-20 w-36 sm:w-40 overflow-hidden rounded-lg bg-white border border-border/40 shadow-soft transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-primary/40 cursor-default"
                 aria-label={c.name}
               >
-                <div className="relative h-full w-full transition-transform duration-[2200ms] ease-in-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                  {/* Front: logo */}
-                  <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-white px-3 py-2 shadow-soft border border-border/40 [backface-visibility:hidden]">
-                    <img
-                      src={c.logo}
-                      alt={`${c.name} logo`}
-                      loading="lazy"
-                      className="max-h-12 max-w-[80%] object-contain"
-                    />
-                  </div>
-                  {/* Back: name */}
-                  <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-primary px-3 py-2 shadow-soft border border-primary/40 text-primary-foreground text-sm font-semibold text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
-                    {c.name}
-                  </div>
+                <div className="flex h-full w-full items-center justify-center px-3 py-2 transition-transform duration-300 ease-out group-hover:-translate-y-2">
+                  <img
+                    src={c.logo}
+                    alt={`${c.name} logo`}
+                    loading="lazy"
+                    className="max-h-12 max-w-[80%] object-contain"
+                  />
+                </div>
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-full bg-primary/95 px-2 py-1 text-center text-xs font-semibold text-primary-foreground transition-transform duration-300 ease-out group-hover:translate-y-0">
+                  {c.name}
                 </div>
               </li>
             ))}
