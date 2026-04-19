@@ -14,28 +14,33 @@ export const quotes: Quote[] = [
     text: "If we realize the divinity that enlivens all life forms on our planet, we will spread peace and love wherever we go.",
     attribution: "Rajinder Singh",
     context: "Inner and Outer Peace through Meditation",
+    theme: "Other",
   },
   {
     id: "q2",
     text: "It's perfectly fine to start with a learning goal and work your way toward a S.M.A.R.T. performance goal.",
     attribution: "Teresa Torres",
     context: "Continuous Discovery Habits: Discover Products that Create Customer Value and Business Value",
+    theme: "Product",
   },
   {
     id: "q3",
     text: "When we manage by outcomes, we give our teams the autonomy, responsibility, and ownership to chart their own path.",
     attribution: "Teresa Torres",
     context: "Continuous Discovery Habits: Discover Products that Create Customer Value and Business Value",
+    theme: "Leadership",
   },
   {
     id: "q4",
     text: "Any product that needs a manual to work is broken.",
     attribution: "Elon Musk",
+    theme: "Product",
   },
   {
     id: "q5",
     text: "Design is not just what it looks like and feels like. Design is how it works.",
     attribution: "Steve Jobs",
+    theme: "Craft",
   },
   {
     id: "q6",
