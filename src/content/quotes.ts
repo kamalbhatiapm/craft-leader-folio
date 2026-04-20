@@ -31,7 +31,7 @@ export const quotes: Quote[] = [
   },
   {
     id: "q4",
-    text: "Any product that needs a manual to work is broken.",
+    text: "Humanity is about to be handed almost unimaginable power, and it is deeply unclear whether our social, political, and technological systems possess the maturity to wield it.",
     attribution: "Elon Musk",
     theme: "Product",
   },
