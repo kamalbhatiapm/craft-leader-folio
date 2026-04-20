@@ -4,7 +4,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { lens, type LensShot } from "@/content/lens";
 import { cn } from "@/lib/utils";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+
 
 const aspectClass: Record<NonNullable<LensShot["aspect"]>, string> = {
   square: "aspect-square",
@@ -104,12 +104,10 @@ export const Lens = () => {
 
       <Dialog open={activeIndex !== null} onOpenChange={(open) => !open && setActiveIndex(null)}>
         <DialogContent className="max-w-5xl border-border bg-background/95 p-0 backdrop-blur">
-          <VisuallyHidden>
-            <DialogTitle>{activeShot?.caption ?? "Photo"}</DialogTitle>
-            <DialogDescription>
-              {activeShot?.location ?? "Photo from the Through My Lens collection"}
-            </DialogDescription>
-          </VisuallyHidden>
+          <DialogTitle className="sr-only">{activeShot?.caption ?? "Photo"}</DialogTitle>
+          <DialogDescription className="sr-only">
+            {activeShot?.location ?? "Photo from the Through My Lens collection"}
+          </DialogDescription>
           {activeShot?.src && (
             <div className="relative flex flex-col">
               <div className="relative flex items-center justify-center bg-muted/30">
