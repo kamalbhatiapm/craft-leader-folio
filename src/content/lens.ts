@@ -1,4 +1,5 @@
 import heronImg from "@/assets/lens-heron.jpeg";
+import balconyImg from "@/assets/lens-balcony.jpeg";
 
 export type LensShot = {
   id: string;
@@ -19,6 +20,14 @@ export const lens: LensShot[] = [
     aspect: "portrait",
     src: heronImg,
     alt: "A great blue heron walking across a grassy riverbank",
+  },
+  {
+    id: "balcony",
+    caption: "Balcony mornings — Buddha, geraniums, and a lake that doesn't check Slack.",
+    location: "Home, lakeside",
+    aspect: "portrait",
+    src: balconyImg,
+    alt: "A stone Buddha statue and pink geraniums on a sunny balcony overlooking a lake",
   },
   {
     id: "morning-coffee",
