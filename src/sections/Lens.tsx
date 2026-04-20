@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Camera } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { Camera, ChevronLeft, ChevronRight } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { lens, type LensShot } from "@/content/lens";
 import { cn } from "@/lib/utils";
@@ -13,7 +13,27 @@ const aspectClass: Record<NonNullable<LensShot["aspect"]>, string> = {
 };
 
 export const Lens = () => {
-  const [activeShot, setActiveShot] = useState<LensShot | null>(null);
+  const viewableShots = lens.filter((s) => !!s.src);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const activeShot = activeIndex !== null ? viewableShots[activeIndex] : null;
+
+  const showPrev = useCallback(() => {
+    setActiveIndex((i) => (i === null ? i : (i - 1 + viewableShots.length) % viewableShots.length));
+  }, [viewableShots.length]);
+
+  const showNext = useCallback(() => {
+    setActiveIndex((i) => (i === null ? i : (i + 1) % viewableShots.length));
+  }, [viewableShots.length]);
+
+  useEffect(() => {
+    if (activeIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") showPrev();
+      else if (e.key === "ArrowRight") showNext();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [activeIndex, showPrev, showNext]);
 
   return (
     <section
@@ -35,7 +55,11 @@ export const Lens = () => {
             <li key={shot.id}>
               <button
                 type="button"
-                onClick={() => shot.src && setActiveShot(shot)}
+                onClick={() => {
+                  if (!shot.src) return;
+                  const idx = viewableShots.findIndex((s) => s.id === shot.id);
+                  if (idx >= 0) setActiveIndex(idx);
+                }}
                 disabled={!shot.src}
                 aria-label={shot.alt ?? shot.caption}
                 className={cn(
@@ -78,7 +102,7 @@ export const Lens = () => {
         </ul>
       </div>
 
-      <Dialog open={!!activeShot} onOpenChange={(open) => !open && setActiveShot(null)}>
+      <Dialog open={activeIndex !== null} onOpenChange={(open) => !open && setActiveIndex(null)}>
         <DialogContent className="max-w-5xl border-border bg-background/95 p-0 backdrop-blur">
           <VisuallyHidden>
             <DialogTitle>{activeShot?.caption ?? "Photo"}</DialogTitle>
@@ -87,22 +111,50 @@ export const Lens = () => {
             </DialogDescription>
           </VisuallyHidden>
           {activeShot?.src && (
-            <div className="flex flex-col">
-              <div className="flex items-center justify-center bg-muted/30">
+            <div className="relative flex flex-col">
+              <div className="relative flex items-center justify-center bg-muted/30">
                 <img
                   src={activeShot.src}
                   alt={activeShot.alt ?? activeShot.caption}
                   className="max-h-[80vh] w-auto object-contain"
                 />
+
+                {viewableShots.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={showPrev}
+                      aria-label="Previous photo"
+                      className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-border bg-background/80 p-2 text-foreground shadow-soft backdrop-blur transition hover:bg-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    >
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={showNext}
+                      aria-label="Next photo"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-border bg-background/80 p-2 text-foreground shadow-soft backdrop-blur transition hover:bg-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    >
+                      <ChevronRight className="h-5 w-5" />
+                    </button>
+                  </>
+                )}
               </div>
-              <div className="border-t border-border p-5">
-                <p className="text-base font-medium leading-snug text-foreground">
-                  {activeShot.caption}
-                </p>
-                {activeShot.location && (
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {activeShot.location}
+              <div className="flex items-end justify-between gap-4 border-t border-border p-5">
+                <div>
+                  <p className="text-base font-medium leading-snug text-foreground">
+                    {activeShot.caption}
                   </p>
+                  {activeShot.location && (
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {activeShot.location}
+                    </p>
+                  )}
+                </div>
+                {viewableShots.length > 1 && activeIndex !== null && (
+                  <span className="shrink-0 text-xs text-muted-foreground">
+                    {activeIndex + 1} / {viewableShots.length}
+                  </span>
                 )}
               </div>
             </div>
