@@ -8,6 +8,7 @@ import minnewankaImg from "@/assets/lens-minnewanka.jpeg";
 import banffShoreImg from "@/assets/lens-banff-shore.jpeg";
 import lakeLouiseImg from "@/assets/lens-lake-louise.jpeg";
 import tahoeImg from "@/assets/lens-tahoe.jpeg";
+import beachSunsetImg from "@/assets/lens-beach-sunset.jpeg";
 
 export type LensShot = {
   id: string;
@@ -92,6 +93,14 @@ export const lens: LensShot[] = [
     aspect: "portrait",
     src: banffShoreImg,
     alt: "A turquoise mountain lake with pine trees and a rocky shoreline under a cloudy sky",
+  },
+  {
+    id: "beach-sunset",
+    caption: "Pacific sunset, low tide. The kind of quiet that costs nothing and gives everything.",
+    location: "California coast",
+    aspect: "landscape",
+    src: beachSunsetImg,
+    alt: "A glowing sunset over the Pacific Ocean with rocky outcrops and waves on a sandy beach",
   },
   {
     id: "herons-flight",
