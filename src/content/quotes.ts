@@ -1,4 +1,4 @@
-export type QuoteTheme = "Leadership" | "Resilience" | "Product" | "Craft" | "Other";
+export type QuoteTheme = "Leadership" | "Resilience" | "Product" | "Craft" | "AI Risk" | "Other";
 
 export type Quote = {
   id: string;
@@ -33,7 +33,7 @@ export const quotes: Quote[] = [
     id: "q4",
     text: "Humanity is about to be handed almost unimaginable power, and it is deeply unclear whether our social, political, and technological systems possess the maturity to wield it.",
     attribution: "Dario Amodei",
-    theme: "Product",
+    theme: "AI Risk",
   },
   {
     id: "q5",
