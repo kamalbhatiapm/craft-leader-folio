@@ -21,13 +21,13 @@ export const Awards = () => (
         {awards.map((a) => (
           <li key={a.id}>
             <article className="group h-full flex flex-col rounded-xl border border-border bg-card text-card-foreground shadow-soft overflow-hidden transition-colors hover:border-primary/40">
-              <div className="aspect-[16/10] bg-gradient-card relative flex items-center justify-center overflow-hidden">
+              <div className="aspect-[16/10] bg-gradient-card relative flex items-center justify-center overflow-hidden p-3">
                 {a.image ? (
                   <img
                     src={a.image}
                     alt={`${a.title} certificate`}
                     loading="lazy"
-                    className="h-full w-full object-cover"
+                    className="max-h-full max-w-full object-contain"
                   />
                 ) : (
                   <Trophy className="h-12 w-12 text-primary/60" aria-hidden />
