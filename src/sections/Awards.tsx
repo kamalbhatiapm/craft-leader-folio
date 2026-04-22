@@ -21,7 +21,7 @@ export const Awards = () => (
         {awards.map((a) => (
           <li key={a.id}>
             <article className="group h-full flex flex-col rounded-xl border border-border bg-card text-card-foreground shadow-soft overflow-hidden transition-colors hover:border-primary/40">
-              <div className="aspect-[16/10] bg-gradient-card relative flex items-center justify-center overflow-hidden">
+              <div className="aspect-[16/10] bg-gradient-card relative flex items-center justify-center overflow-hidden p-4">
                 {a.image ? (
                   <img
                     src={a.image}
