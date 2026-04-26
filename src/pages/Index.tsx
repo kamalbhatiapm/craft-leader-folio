@@ -5,7 +5,7 @@ import { About } from "@/sections/About";
 import { Projects } from "@/sections/Projects";
 import { Articles } from "@/sections/Articles";
 import { Awards } from "@/sections/Awards";
-import { Songs } from "@/sections/Songs";
+import { SongsTeaser } from "@/sections/SongsTeaser";
 import { Quotes } from "@/sections/Quotes";
 import { LensTeaser } from "@/sections/LensTeaser";
 import { getInitialTheme } from "@/lib/useTheme";
@@ -36,7 +36,7 @@ const Index = () => {
         <Projects />
         <Articles />
         <Awards />
-        <Songs />
+        <SongsTeaser />
         <Quotes />
         <LensTeaser />
       </main>
