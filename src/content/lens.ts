@@ -9,6 +9,7 @@ import banffShoreImg from "@/assets/lens-banff-shore.jpeg";
 import lakeLouiseImg from "@/assets/lens-lake-louise.jpeg";
 import tahoeImg from "@/assets/lens-tahoe.jpeg";
 import beachSunsetImg from "@/assets/lens-beach-sunset.jpeg";
+import egretPondImg from "@/assets/lens-egret-pond.jpeg";
 
 export type LensShot = {
   id: string;
