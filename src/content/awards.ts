@@ -23,7 +23,7 @@ export const awards: Award[] = [
     year: 2026,
     description:
       "Calm Falcon — AI Signals Intelligence featured as a Standout Build on MyAICommunity.org, hand-picked by instructors for exceptional quality and real-world usefulness.",
-    url: "https://myaicommunity.org",
+    url: "https://myaicommunity.org/project/6f64eb5c-0556-4a8a-9580-006ca0467362",
     image: standoutBuildsMyAi2026,
   },
   {
