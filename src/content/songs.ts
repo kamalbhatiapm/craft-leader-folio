@@ -30,7 +30,7 @@ export const songs: Song[] = [
     title: "Fight Till You Win",
     artist: "Ed Sheeran ft. Rihanna & Lady Gaga",
     why: "[TODO: one-line why this song]",
-    youtubeId: "PJQM_VzDdR8",
-    links: { youtube: "https://www.youtube.com/watch?v=PJQM_VzDdR8" },
+    youtubeId: "vk6014HuxcE",
+    links: { youtube: "https://youtu.be/vk6014HuxcE?si=AW4DTS6I7x0Ui-Om" },
   },
 ];
