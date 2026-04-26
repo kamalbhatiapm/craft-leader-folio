@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Camera, ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
-import heronThumb from "@/assets/lens-heron.jpeg";
+import egretPondThumb from "@/assets/lens-egret-pond.jpeg";
 
 // Static count of viewable photos in the gallery.
 // Kept in sync manually so the homepage doesn't import the full lens module
@@ -30,8 +30,8 @@ export const LensTeaser = () => {
         >
           {/* Background image fills the entire card */}
           <img
-            src={heronThumb}
-            alt="A great blue heron walking across a grassy riverbank"
+            src={egretPondThumb}
+            alt="A great egret standing across a calm reflective pond"
             loading="lazy"
             decoding="async"
             width="1600"
