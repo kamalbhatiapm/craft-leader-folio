@@ -26,7 +26,7 @@ export const LensTeaser = () => {
 
         <Link
           to="/lens"
-          className="group relative block overflow-hidden rounded-2xl border border-border bg-gradient-card shadow-soft transition-shadow hover:shadow-elegant focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="group relative block overflow-hidden rounded-2xl border border-border bg-gradient-card shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           <div className="grid gap-0 sm:grid-cols-[minmax(0,0.5fr)_minmax(0,1.5fr)]">
             <div className="relative aspect-[4/3] overflow-hidden sm:aspect-auto sm:h-full">
@@ -34,9 +34,11 @@ export const LensTeaser = () => {
                 src={heronThumb}
                 alt="A great blue heron walking across a grassy riverbank"
                 loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                decoding="async"
+                width="800"
+                height="600"
+                className="h-full w-full object-cover"
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent sm:bg-gradient-to-r sm:from-transparent sm:to-background/30" />
             </div>
 
             <div className="flex flex-col items-start gap-6 p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10">
