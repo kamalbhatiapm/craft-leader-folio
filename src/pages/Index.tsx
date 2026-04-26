@@ -7,7 +7,7 @@ import { Articles } from "@/sections/Articles";
 import { Awards } from "@/sections/Awards";
 import { Songs } from "@/sections/Songs";
 import { Quotes } from "@/sections/Quotes";
-import { Lens } from "@/sections/Lens";
+import { LensTeaser } from "@/sections/LensTeaser";
 import { getInitialTheme } from "@/lib/useTheme";
 
 const Index = () => {
@@ -17,6 +17,14 @@ const Index = () => {
     document.documentElement.classList.toggle("dark", t === "dark");
     document.documentElement.style.colorScheme = t;
     document.title = "Portfolio — Product Leader";
+
+    // Scroll to hash target if arriving with one (e.g. /#about from another page)
+    if (window.location.hash) {
+      const id = window.location.hash.slice(1);
+      requestAnimationFrame(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
   }, []);
 
   return (
@@ -30,7 +38,7 @@ const Index = () => {
         <Awards />
         <Songs />
         <Quotes />
-        <Lens />
+        <LensTeaser />
       </main>
       <SiteFooter />
     </>
