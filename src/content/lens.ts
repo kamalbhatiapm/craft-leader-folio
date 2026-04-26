@@ -9,6 +9,7 @@ import banffShoreImg from "@/assets/lens-banff-shore.jpeg";
 import lakeLouiseImg from "@/assets/lens-lake-louise.jpeg";
 import tahoeImg from "@/assets/lens-tahoe.jpeg";
 import beachSunsetImg from "@/assets/lens-beach-sunset.jpeg";
+import egretPondImg from "@/assets/lens-egret-pond.jpeg";
 
 export type LensShot = {
   id: string;
@@ -109,5 +110,13 @@ export const lens: LensShot[] = [
     aspect: "portrait",
     src: heronsFlightImg,
     alt: "Two herons taking flight over a grassy bank beside a calm lake",
+  },
+  {
+    id: "egret-pond",
+    caption: "An egret across the pond, holding court in the shade. Spring, doing its thing.",
+    location: "Pondside, spring",
+    aspect: "portrait",
+    src: egretPondImg,
+    alt: "A great white egret standing on a grassy bank across a calm pond framed by spring trees",
   },
 ];
