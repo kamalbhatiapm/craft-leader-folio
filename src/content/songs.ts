@@ -27,8 +27,8 @@ export const songs: Song[] = [
   },
   {
     id: "s3",
-    title: "Fight Till You Win",
-    artist: "Ed Sheeran ft. Rihanna & Lady Gaga",
+    title: "Empire State Of Mind",
+    artist: "JAY-Z ft. Alicia Keys",
     why: "[TODO: one-line why this song]",
     youtubeId: "vk6014HuxcE",
     links: { youtube: "https://youtu.be/vk6014HuxcE?si=AW4DTS6I7x0Ui-Om" },
