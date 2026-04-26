@@ -16,7 +16,7 @@ export const LensTeaser = () => {
         <SectionHeader
           eyebrow="Through My Lens"
           title="Glimpses of life beyond the roadmap"
-          description="Moments beyond work that keep me grounded and sharpen how I notice the world."
+          description="Moments beyond work that keep me grounded and sharpen how I notice the world. Every photo here is captured by me."
         />
 
         <h2 id="lens-heading" className="sr-only">Through My Lens</h2>
@@ -35,7 +35,7 @@ export const LensTeaser = () => {
                   View the full gallery
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  {count} photographs — landscapes, light, and quiet moments.
+                  {count} photographs, all shot by me — landscapes, light, and quiet moments.
                 </p>
               </div>
             </div>
