@@ -110,6 +110,7 @@ export const lens: LensShot[] = [
     aspect: "portrait",
     src: heronsFlightImg,
     alt: "Two herons taking flight over a grassy bank beside a calm lake",
+  },
   {
     id: "egret-pond",
     caption: "An egret across the pond, holding court in the shade. Spring, doing its thing.",
