@@ -6,7 +6,7 @@ import { lens } from "@/content/lens";
 export const LensTeaser = () => {
   const viewable = lens.filter((s) => !!s.src);
   const count = viewable.length;
-  const thumb = viewable.find((s) => s.id === "lake-louise") ?? viewable[0];
+  const thumb = viewable.find((s) => s.id === "heron") ?? viewable[0];
 
   return (
     <section
@@ -27,7 +27,7 @@ export const LensTeaser = () => {
           to="/lens"
           className="group relative block overflow-hidden rounded-2xl border border-border bg-gradient-card shadow-soft transition-shadow hover:shadow-elegant focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
-          <div className="grid gap-0 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
+          <div className="grid gap-0 sm:grid-cols-[minmax(0,0.5fr)_minmax(0,1.5fr)]">
             {thumb?.src && (
               <div className="relative aspect-[4/3] overflow-hidden sm:aspect-auto sm:h-full">
                 <img
