@@ -17,6 +17,14 @@ const Index = () => {
     document.documentElement.classList.toggle("dark", t === "dark");
     document.documentElement.style.colorScheme = t;
     document.title = "Portfolio — Product Leader";
+
+    // Scroll to hash target if arriving with one (e.g. /#about from another page)
+    if (window.location.hash) {
+      const id = window.location.hash.slice(1);
+      requestAnimationFrame(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
   }, []);
 
   return (
