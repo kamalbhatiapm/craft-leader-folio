@@ -45,7 +45,7 @@ export const Lens = () => {
         <SectionHeader
           eyebrow="Through My Lens"
           title="Glimpses of life beyond the roadmap"
-          description="Moments beyond work that keep me grounded and sharpen how I notice the world."
+          description="Moments beyond work that keep me grounded and sharpen how I notice the world. Every photo here is captured by me."
         />
 
         <h2 id="lens-heading" className="sr-only">Through My Lens</h2>
