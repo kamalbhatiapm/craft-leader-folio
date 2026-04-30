@@ -22,26 +22,6 @@ Live at **[calmfalcon.ai](https://calmfalcon.ai)**.
 - **Lovable Cloud** (Supabase under the hood) for backend capabilities
 - **Vitest** + **Testing Library** for tests
 
-## Local development
-
-Requires Node.js 18+ and npm (or bun).
-
-```bash
-# install dependencies
-npm install
-
-# start the dev server
-npm run dev
-
-# build for production
-npm run build
-
-# run tests
-npm test
-```
-
-The dev server runs at `http://localhost:8080` by default.
-
 ## Project structure
 
 ```
