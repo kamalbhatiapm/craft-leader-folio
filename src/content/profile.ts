@@ -63,5 +63,6 @@ export const profile: Profile = {
   socials: {
     email: "kamal.bhatia.pm@gmail.com",
     linkedin: "https://www.linkedin.com/in/kbhatiatech",
+    github: "https://github.com/kamalbhatiapm",
   },
 };
