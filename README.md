@@ -1,6 +1,6 @@
 # Kamal Bhatia — Personal Site
 
-A personal website and portfolio built by [Kamal Bhatia](https://calmfalcon.ai). It's a quiet corner of the internet that gathers the work, words, and moments I care about.
+A personal website and portfolio built by [Kamal Bhatia](https://github.com/kamalbhatiapm). It's a quiet corner of the internet that gathers the work, words, and moments I care about.
 
 Live at **[calmfalcon.ai](https://calmfalcon.ai)**.
 
