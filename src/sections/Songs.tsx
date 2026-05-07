@@ -6,6 +6,7 @@ import {
   PlayCircle,
   Rewind,
   FastForward,
+  Repeat,
   SkipBack,
   SkipForward,
   X,
@@ -18,6 +19,7 @@ export const Songs = () => {
   const [playAll, setPlayAll] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [loop, setLoop] = useState(true);
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
   const playableSongs = songs.filter((s): s is typeof s & { youtubeId: string } =>
@@ -77,7 +79,14 @@ export const Songs = () => {
         if (videoId) {
           const idx = playlistIds.indexOf(videoId);
           if (idx >= 0) {
-            setCurrentIndex(idx);
+            setCurrentIndex((prev) => {
+              // If loop is off and we wrapped back to an earlier index, pause.
+              if (!loop && idx < prev) {
+                sendCommand("pauseVideo");
+                setIsPlaying(false);
+              }
+              return idx;
+            });
           }
         } else if (typeof info.playlistIndex === "number" && info.playlistIndex >= 0) {
           const idx = info.playlistIndex % playlistIds.length;
@@ -95,7 +104,7 @@ export const Songs = () => {
       window.removeEventListener("message", onMessage);
       clearTimeout(t);
     };
-  }, [playAll, playlistIds]);
+  }, [playAll, playlistIds, loop]);
 
   const togglePlay = () => {
     if (isPlaying) {
@@ -214,6 +223,16 @@ export const Songs = () => {
                       aria-label="Next track"
                     >
                       <SkipForward className="h-4 w-4" aria-hidden />
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => setLoop((l) => !l)}
+                      aria-label={loop ? "Disable loop" : "Enable loop"}
+                      aria-pressed={loop}
+                      className={loop ? "text-primary" : ""}
+                    >
+                      <Repeat className="h-4 w-4" aria-hidden />
                     </Button>
                     <Button
                       variant="ghost"
