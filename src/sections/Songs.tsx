@@ -19,6 +19,7 @@ export const Songs = () => {
   const [playAll, setPlayAll] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [loop, setLoop] = useState(true);
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
   const playableSongs = songs.filter((s): s is typeof s & { youtubeId: string } =>
