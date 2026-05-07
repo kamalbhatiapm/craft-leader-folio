@@ -19,8 +19,8 @@ export const songs: Song[] = [
   },
   {
     id: "s2",
-    title: "CAN'T STOP THE FEELING!",
-    artist: "Justin Timberlake",
+    title: "Where Is The Love?",
+    artist: "The Black Eyed Peas",
     why: "[TODO: one-line why this song]",
     youtubeId: "WpYeekQkAdc",
     links: { youtube: "https://youtu.be/WpYeekQkAdc?si=M1hCCFRXNfX-XOGA" },
