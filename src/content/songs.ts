@@ -22,8 +22,8 @@ export const songs: Song[] = [
     title: "CAN'T STOP THE FEELING!",
     artist: "Justin Timberlake",
     why: "[TODO: one-line why this song]",
-    youtubeId: "ru0K8uYEZWw",
-    links: { youtube: "https://www.youtube.com/watch?v=ru0K8uYEZWw" },
+    youtubeId: "WpYeekQkAdc",
+    links: { youtube: "https://youtu.be/WpYeekQkAdc?si=M1hCCFRXNfX-XOGA" },
   },
   {
     id: "s3",
