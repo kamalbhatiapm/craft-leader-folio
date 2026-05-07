@@ -104,7 +104,7 @@ export const Songs = () => {
       window.removeEventListener("message", onMessage);
       clearTimeout(t);
     };
-  }, [playAll, playlistIds]);
+  }, [playAll, playlistIds, loop]);
 
   const togglePlay = () => {
     if (isPlaying) {
