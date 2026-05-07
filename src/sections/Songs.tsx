@@ -6,6 +6,7 @@ import {
   PlayCircle,
   Rewind,
   FastForward,
+  Repeat,
   SkipBack,
   SkipForward,
   X,
