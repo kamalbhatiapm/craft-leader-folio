@@ -226,6 +226,16 @@ export const Songs = () => {
                     </Button>
                     <Button
                       variant="ghost"
+                      size="icon"
+                      onClick={() => setLoop((l) => !l)}
+                      aria-label={loop ? "Disable loop" : "Enable loop"}
+                      aria-pressed={loop}
+                      className={loop ? "text-primary" : ""}
+                    >
+                      <Repeat className="h-4 w-4" aria-hidden />
+                    </Button>
+                    <Button
+                      variant="ghost"
                       size="sm"
                       className="gap-1"
                       onClick={() => setPlayAll(false)}
