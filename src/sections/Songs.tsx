@@ -79,7 +79,14 @@ export const Songs = () => {
         if (videoId) {
           const idx = playlistIds.indexOf(videoId);
           if (idx >= 0) {
-            setCurrentIndex(idx);
+            setCurrentIndex((prev) => {
+              // If loop is off and we wrapped back to an earlier index, pause.
+              if (!loop && idx < prev) {
+                sendCommand("pauseVideo");
+                setIsPlaying(false);
+              }
+              return idx;
+            });
           }
         } else if (typeof info.playlistIndex === "number" && info.playlistIndex >= 0) {
           const idx = info.playlistIndex % playlistIds.length;
