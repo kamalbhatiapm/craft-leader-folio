@@ -19,8 +19,8 @@ export const songs: Song[] = [
   },
   {
     id: "s2",
-    title: "Where Is The Love?",
-    artist: "The Black Eyed Peas",
+    title: "Titanium",
+    artist: "David Guetta ft. Sia",
     why: "[TODO: one-line why this song]",
     youtubeId: "KxnpFKZowcs",
     links: { youtube: "https://youtu.be/KxnpFKZowcs?si=TaFFb7oXA3LsMqpo" },
