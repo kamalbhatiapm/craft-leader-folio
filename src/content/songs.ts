@@ -22,8 +22,8 @@ export const songs: Song[] = [
     title: "Where Is The Love?",
     artist: "The Black Eyed Peas",
     why: "[TODO: one-line why this song]",
-    youtubeId: "WpYeekQkAdc",
-    links: { youtube: "https://youtu.be/WpYeekQkAdc?si=M1hCCFRXNfX-XOGA" },
+    youtubeId: "KxnpFKZowcs",
+    links: { youtube: "https://youtu.be/KxnpFKZowcs?si=TaFFb7oXA3LsMqpo" },
   },
   {
     id: "s3",
