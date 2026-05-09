@@ -14,8 +14,8 @@ export const songs: Song[] = [
     title: "Counting Stars",
     artist: "OneRepublic",
     why: "[TODO: one-line why this song]",
-    youtubeId: "hT_nvWreIhg",
-    links: { youtube: "https://youtu.be/hT_nvWreIhg?si=ahGtAiFolaBzQRm5" },
+    youtubeId: "KMK7QB5T2D4",
+    links: { youtube: "https://youtu.be/KMK7QB5T2D4?si=SbBe8w2vdgvkuzel" },
   },
   {
     id: "s2",
