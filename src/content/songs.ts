@@ -11,8 +11,8 @@ export type Song = {
 export const songs: Song[] = [
   {
     id: "s1",
-    title: "I Believe That We Will Win (World Anthem)",
-    artist: "Pitbull",
+    title: "I Ain't Worried",
+    artist: "OneRepublic",
     why: "[TODO: one-line why this song]",
     youtubeId: "mNEUkkoUoIA",
     links: { youtube: "https://youtu.be/mNEUkkoUoIA?si=slycm7MERSX6BVzN" },
