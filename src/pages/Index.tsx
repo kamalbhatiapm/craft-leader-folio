@@ -36,7 +36,7 @@ const Index = () => {
         <Projects />
         <Articles />
         <Awards />
-        <Songs />
+        {/* <Songs /> hidden for later */}
         <Quotes />
         <LensTeaser />
       </main>
