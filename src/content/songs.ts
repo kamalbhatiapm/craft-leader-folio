@@ -19,8 +19,8 @@ export const songs: Song[] = [
   },
   {
     id: "s2",
-    title: "Titanium",
-    artist: "David Guetta ft. Sia",
+    title: "A Sky Full Of Stars",
+    artist: "Coldplay",
     why: "[TODO: one-line why this song]",
     youtubeId: "VPRjCeoBqrI",
     links: { youtube: "https://youtu.be/VPRjCeoBqrI?si=y9Rqk_bMXL1X1rUS" },
