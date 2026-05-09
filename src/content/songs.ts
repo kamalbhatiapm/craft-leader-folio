@@ -22,8 +22,8 @@ export const songs: Song[] = [
     title: "Titanium",
     artist: "David Guetta ft. Sia",
     why: "[TODO: one-line why this song]",
-    youtubeId: "KxnpFKZowcs",
-    links: { youtube: "https://youtu.be/KxnpFKZowcs?si=TaFFb7oXA3LsMqpo" },
+    youtubeId: "VPRjCeoBqrI",
+    links: { youtube: "https://youtu.be/VPRjCeoBqrI?si=y9Rqk_bMXL1X1rUS" },
   },
   {
     id: "s3",
