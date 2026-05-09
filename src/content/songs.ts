@@ -14,8 +14,8 @@ export const songs: Song[] = [
     title: "I Believe That We Will Win (World Anthem)",
     artist: "Pitbull",
     why: "[TODO: one-line why this song]",
-    youtubeId: "ZxMaHi91RkE",
-    links: { youtube: "https://www.youtube.com/watch?v=ZxMaHi91RkE" },
+    youtubeId: "mNEUkkoUoIA",
+    links: { youtube: "https://youtu.be/mNEUkkoUoIA?si=slycm7MERSX6BVzN" },
   },
   {
     id: "s2",
