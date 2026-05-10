@@ -11,7 +11,6 @@ const SECTIONS: NavItem[] = [
   { id: "projects", label: "AI Projects" },
   { id: "articles", label: "Articles" },
   { id: "awards", label: "Awards & Certifications" },
-  { id: "songs", label: "Hype Songs" },
   { id: "quotes", label: "Quotes" },
   { id: "lens", label: "Through My Lens", route: "/lens" },
 ];
