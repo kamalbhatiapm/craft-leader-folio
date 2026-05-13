@@ -36,7 +36,7 @@ const Index = () => {
         <About />
         <Projects />
         <Articles />
-        <Awards />
+        {/* <Awards /> hidden */}
         {/* <Songs /> hidden for later */}
         <Quotes />
         <MoodCheck />
