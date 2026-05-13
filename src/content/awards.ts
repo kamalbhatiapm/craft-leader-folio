@@ -17,16 +17,6 @@ export type Award = {
 
 export const awards: Award[] = [
   {
-    id: "standout-builds-myaicommunity-2026",
-    title: "Standout Build — Most Comprehensive Project",
-    issuer: "MyAICommunity.org",
-    year: 2026,
-    description:
-      "Calm Falcon — AI Signals Intelligence featured as a Standout Build on MyAICommunity.org, hand-picked by instructors for exceptional quality and real-world usefulness.",
-    url: "https://myaicommunity.org/project/6f64eb5c-0556-4a8a-9580-006ca0467362",
-    image: standoutBuildsMyAi2026,
-  },
-  {
     id: "pitch-day-2026",
     title: "Pitch Day — Most Comprehensive Project",
     issuer: "Agentic AI Product Management Certification",
