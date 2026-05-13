@@ -14,6 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
+      mood_checks: {
+        Row: {
+          created_at: string
+          id: string
+          mood: number
+          note: string | null
+          session_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          mood: number
+          note?: string | null
+          session_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          mood?: number
+          note?: string | null
+          session_id?: string | null
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
@@ -103,6 +127,13 @@ export type Database = {
           _user_id: string
         }
         Returns: boolean
+      }
+      mood_summary: {
+        Args: never
+        Returns: {
+          count: number
+          mood: number
+        }[]
       }
     }
     Enums: {
