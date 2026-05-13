@@ -47,4 +47,10 @@ export const quotes: Quote[] = [
     attribution: "Henry Ford",
     theme: "Resilience",
   },
+  {
+    id: "q7",
+    text: "When they go low, we go high.",
+    attribution: "Michelle Obama",
+    theme: "Leadership",
+  },
 ];
