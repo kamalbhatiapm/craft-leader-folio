@@ -49,7 +49,7 @@ const MoodCheckNotificationEmail = ({
 
         {note ? (
           <>
-            <Text style={label}>Note</Text>
+            <Text style={label}>Anonymous note</Text>
             <Text style={noteStyle}>“{note}”</Text>
           </>
         ) : (
