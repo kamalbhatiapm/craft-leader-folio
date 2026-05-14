@@ -11,6 +11,7 @@ import { useVisitTracker } from "@/lib/useVisitTracker";
 const LensPage = lazy(() => import("./pages/LensPage.tsx"));
 const AdminAuth = lazy(() => import("./pages/AdminAuth.tsx"));
 const AdminAnalytics = lazy(() => import("./pages/AdminAnalytics.tsx"));
+const Unsubscribe = lazy(() => import("./pages/Unsubscribe.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
             <Route path="/lens" element={<LensPage />} />
             <Route path="/admin/login" element={<AdminAuth />} />
             <Route path="/admin/analytics" element={<AdminAnalytics />} />
+            <Route path="/unsubscribe" element={<Unsubscribe />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
