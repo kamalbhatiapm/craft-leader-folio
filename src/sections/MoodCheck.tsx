@@ -18,8 +18,6 @@ const schema = z.object({
   note: z.string().trim().max(500).optional(),
 });
 
-const STORAGE_KEY = "mood-check-submitted";
-
 export const MoodCheck = () => {
   const [mood, setMood] = useState(3);
   const [note, setNote] = useState("");
@@ -28,11 +26,9 @@ export const MoodCheck = () => {
   const [summary, setSummary] = useState<Record<number, number>>({});
 
   useEffect(() => {
-    if (typeof window !== "undefined" && localStorage.getItem(STORAGE_KEY)) {
-      setSubmitted(true);
-    }
     loadSummary();
   }, []);
+
 
   const loadSummary = async () => {
     const { data } = await supabase.rpc("mood_summary");
@@ -88,10 +84,13 @@ export const MoodCheck = () => {
         })
         .catch((err) => console.error("Email notification failed", recipientEmail, err));
     });
-    localStorage.setItem(STORAGE_KEY, "1");
+    setMood(3);
+    setNote("");
     setSubmitted(true);
     toast({ title: "Thanks for sharing", description: "Your mood has been recorded." });
     loadSummary();
+    setTimeout(() => setSubmitted(false), 3000);
+
   };
 
   const total = Object.values(summary).reduce((a, b) => a + b, 0);
@@ -117,7 +116,7 @@ export const MoodCheck = () => {
               <div className="rounded-xl border border-border bg-card p-8 shadow-soft">
                 <p className="font-serif text-2xl text-foreground">Thanks for checking in.</p>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Your mood is recorded. Come back tomorrow.
+                  Send another whenever you like.
                 </p>
               </div>
             ) : (
