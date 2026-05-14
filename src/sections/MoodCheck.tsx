@@ -67,21 +67,27 @@ export const MoodCheck = () => {
       return;
     }
     const moodMeta = MOODS.find((m) => m.value === parsed.data.mood)!;
-    supabase.functions.invoke("send-transactional-email", {
-      body: {
-        templateName: "mood-check-notification",
-        recipientEmail: "kbhatia.tech@gmail.com",
-        idempotencyKey: `mood-check-${id}`,
-        templateData: {
-          mood: parsed.data.mood,
-          moodLabel: moodMeta.label,
-          moodEmoji: moodMeta.emoji,
-          note: parsed.data.note ?? null,
-          sessionId: sessionId ?? null,
-          submittedAt: new Date().toISOString(),
-        },
-      },
-    }).catch((err) => console.error("Email notification failed", err));
+    const templateData = {
+      mood: parsed.data.mood,
+      moodLabel: moodMeta.label,
+      moodEmoji: moodMeta.emoji,
+      note: parsed.data.note ?? null,
+      sessionId: sessionId ?? null,
+      submittedAt: new Date().toISOString(),
+    };
+    const recipients = ["kbhatia.tech@gmail.com", "info@calmfalcon.ai"];
+    recipients.forEach((recipientEmail) => {
+      supabase.functions
+        .invoke("send-transactional-email", {
+          body: {
+            templateName: "mood-check-notification",
+            recipientEmail,
+            idempotencyKey: `mood-check-${id}-${recipientEmail}`,
+            templateData,
+          },
+        })
+        .catch((err) => console.error("Email notification failed", recipientEmail, err));
+    });
     localStorage.setItem(STORAGE_KEY, "1");
     setSubmitted(true);
     toast({ title: "Thanks for sharing", description: "Your mood has been recorded." });
