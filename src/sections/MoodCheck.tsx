@@ -53,16 +53,35 @@ export const MoodCheck = () => {
       return;
     }
     setSubmitting(true);
+    const id = crypto.randomUUID();
+    const sessionId = typeof window !== "undefined" ? localStorage.getItem("session_id") : null;
     const { error } = await supabase.from("mood_checks").insert({
+      id,
       mood: parsed.data.mood,
       note: parsed.data.note ?? null,
-      session_id: typeof window !== "undefined" ? localStorage.getItem("session_id") : null,
+      session_id: sessionId,
     });
     setSubmitting(false);
     if (error) {
       toast({ title: "Couldn't submit", description: error.message, variant: "destructive" });
       return;
     }
+    const moodMeta = MOODS.find((m) => m.value === parsed.data.mood)!;
+    supabase.functions.invoke("send-transactional-email", {
+      body: {
+        templateName: "mood-check-notification",
+        recipientEmail: "kbhatia.tech@gmail.com",
+        idempotencyKey: `mood-check-${id}`,
+        templateData: {
+          mood: parsed.data.mood,
+          moodLabel: moodMeta.label,
+          moodEmoji: moodMeta.emoji,
+          note: parsed.data.note ?? null,
+          sessionId: sessionId ?? null,
+          submittedAt: new Date().toISOString(),
+        },
+      },
+    }).catch((err) => console.error("Email notification failed", err));
     localStorage.setItem(STORAGE_KEY, "1");
     setSubmitted(true);
     toast({ title: "Thanks for sharing", description: "Your mood has been recorded." });
