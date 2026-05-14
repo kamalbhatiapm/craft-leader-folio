@@ -158,7 +158,7 @@ export const MoodCheck = () => {
                 </div>
 
                 <label className="mt-6 block">
-                  <span className="text-sm font-medium text-foreground">Optional note</span>
+                  <span className="text-sm font-medium text-foreground">Anonymous note</span>
                   <textarea
                     value={note}
                     onChange={(e) => setNote(e.target.value.slice(0, 500))}
