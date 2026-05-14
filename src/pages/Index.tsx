@@ -7,7 +7,7 @@ import { Articles } from "@/sections/Articles";
 import { Awards } from "@/sections/Awards";
 import { Songs } from "@/sections/Songs";
 import { Quotes } from "@/sections/Quotes";
-
+import { MoodCheck } from "@/sections/MoodCheck";
 import { LensTeaser } from "@/sections/LensTeaser";
 import { getInitialTheme } from "@/lib/useTheme";
 
@@ -36,10 +36,10 @@ const Index = () => {
         <About />
         <Projects />
         <Articles />
-        {/* <Awards /> hidden */}
+        <Awards />
         {/* <Songs /> hidden for later */}
         <Quotes />
-        
+        <MoodCheck />
         <LensTeaser />
       </main>
       <SiteFooter />

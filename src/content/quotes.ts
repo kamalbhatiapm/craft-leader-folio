@@ -30,6 +30,12 @@ export const quotes: Quote[] = [
     theme: "Leadership",
   },
   {
+    id: "q4",
+    text: "Humanity is about to be handed almost unimaginable power, and it is deeply unclear whether our social, political, and technological systems possess the maturity to wield it.",
+    attribution: "Dario Amodei",
+    theme: "AI Risk",
+  },
+  {
     id: "q5",
     text: "Design is not just what it looks like and feels like. Design is how it works.",
     attribution: "Steve Jobs",
