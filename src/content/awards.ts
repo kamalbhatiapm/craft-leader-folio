@@ -24,13 +24,6 @@ export const awards: Award[] = [
       "Recognized for building a complete, end-to-end AI product with exceptional depth, clarity, and execution during the Agentic AI PM course.",
     image: pitchDay2026,
   },
-    title: "Pitch Day — Most Comprehensive Project",
-    issuer: "Agentic AI Product Management Certification",
-    year: 2026,
-    description:
-      "Recognized for building a complete, end-to-end AI product with exceptional depth, clarity, and execution during the Agentic AI PM course.",
-    image: pitchDay2026,
-  },
   {
     id: "agentic-ai-pm-2026",
     title: "Agentic AI Product Management Certification",
