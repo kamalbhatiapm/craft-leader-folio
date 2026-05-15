@@ -27,11 +27,7 @@ export const Awards = () => (
                     src={a.image}
                     alt={`${a.title} certificate`}
                     loading="lazy"
-                    className={
-                      a.id === "standout-builds-myaicommunity-2026"
-                        ? "h-full w-full object-contain"
-                        : "h-full w-full object-cover"
-                    }
+                    className="h-full w-full object-cover"
                   />
                 ) : (
                   <Trophy className="h-12 w-12 text-primary/60" aria-hidden />
