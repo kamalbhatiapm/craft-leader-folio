@@ -1,4 +1,3 @@
-import pitchDay2026 from "@/assets/awards/pitch-day-2026.jpg";
 import agenticAiPm2026 from "@/assets/awards/agentic-ai-pm-2026.jpg";
 import claudeCodeSkills2026 from "@/assets/awards/claude-code-skills-2026.jpg";
 import spmc2023 from "@/assets/awards/spmc-2023.jpg";
@@ -15,15 +14,6 @@ export type Award = {
 };
 
 export const awards: Award[] = [
-  {
-    id: "pitch-day-2026",
-    title: "Pitch Day — Most Comprehensive Project",
-    issuer: "Agentic AI Product Management Certification",
-    year: 2026,
-    description:
-      "Recognized for building a complete, end-to-end AI product with exceptional depth, clarity, and execution during the Agentic AI PM course.",
-    image: pitchDay2026,
-  },
   {
     id: "agentic-ai-pm-2026",
     title: "Agentic AI Product Management Certification",
