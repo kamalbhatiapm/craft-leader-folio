@@ -10,12 +10,6 @@ export type Quote = {
 
 export const quotes: Quote[] = [
   {
-    id: "q1",
-    text: "If we realize the divinity that enlivens all life forms on our planet, we will spread peace and love wherever we go.",
-    attribution: "Rajinder Singh",
-    context: "Inner and Outer Peace through Meditation",
-  },
-  {
     id: "q2",
     text: "It's perfectly fine to start with a learning goal and work your way toward a S.M.A.R.T. performance goal.",
     attribution: "Teresa Torres",
