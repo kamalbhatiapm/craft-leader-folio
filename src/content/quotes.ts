@@ -1,4 +1,4 @@
-export type QuoteTheme = "Leadership" | "Resilience" | "Product" | "Craft" | "AI Risk" | "Other";
+export type QuoteTheme = "Leadership" | "Resilience" | "Product" | "Craft" | "AI Risk" | "Communication" | "Other";
 
 export type Quote = {
   id: string;
@@ -57,7 +57,7 @@ export const quotes: Quote[] = [
     id: "q9",
     text: "Most misunderstandings don't come from what was said. They come from what was assumed.",
     attribution: "Unknown",
-    theme: "Other",
+    theme: "Communication",
   },
   {
     id: "q10",
