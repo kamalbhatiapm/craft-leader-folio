@@ -53,4 +53,10 @@ export const quotes: Quote[] = [
     attribution: "Alex Hormozi",
     theme: "Craft",
   },
+  {
+    id: "q9",
+    text: "Most misunderstandings don't come from what was said. They come from what was assumed.",
+    attribution: "Unknown",
+    theme: "Other",
+  },
 ];
