@@ -1,4 +1,4 @@
-export type QuoteTheme = "Leadership" | "Resilience" | "Product" | "Craft" | "AI Risk" | "Other";
+export type QuoteTheme = "Leadership" | "Resilience" | "Product" | "Craft" | "AI Risk" | "Communication" | "Other";
 
 export type Quote = {
   id: string;
