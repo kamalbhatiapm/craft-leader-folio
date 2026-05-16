@@ -47,4 +47,10 @@ export const quotes: Quote[] = [
     attribution: "Michelle Obama",
     theme: "Leadership",
   },
+  {
+    id: "q8",
+    text: "Even if it takes longer, do it yourself. There is a different kind of confidence that comes from knowing you built it with your own hands.",
+    attribution: "Alex Hormozi",
+    theme: "Craft",
+  },
 ];
