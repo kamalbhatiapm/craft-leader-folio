@@ -59,4 +59,10 @@ export const quotes: Quote[] = [
     attribution: "Unknown",
     theme: "Other",
   },
+  {
+    id: "q10",
+    text: "Some people don't break your kindness. They teach you where your boundaries should have been.",
+    attribution: "Unknown",
+    theme: "Other",
+  },
 ];
